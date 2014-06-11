@@ -7,12 +7,11 @@
 //
 
 #import "CDAAboutUsViewController.h"
-#import "UILabel+Alignment.h"
+#import "UIView+Geometry.h"
 
 @interface CDAAboutUsViewController ()
 
 @property (nonatomic) CGFloat emptySpaceHeight;
-@property (nonatomic) UILabel* versionLabel;
 
 @end
 
@@ -78,7 +77,7 @@
 #pragma mark - UITableViewDelegate
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section {
-    return 100.0;
+    return 70.0;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -100,37 +99,41 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    [self.versionLabel performSelector:@selector(cda_alignBottom) withObject:nil afterDelay:0.1];
     return self.emptySpaceHeight;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 100.0;
+    return 150.0;
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UILabel* versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0,
-                                                               tableView.frame.size.width,
-                                                               self.emptySpaceHeight)];
+    UIView* footerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0,
+                                                                  tableView.frame.size.width,
+                                                                  self.emptySpaceHeight)];
     
-    versionLabel.backgroundColor = [UIColor clearColor];
+    UILabel* versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.width, 50.0)];
+    versionLabel.y = footerView.height - versionLabel.height;
+    
     versionLabel.text = [NSString stringWithFormat:NSLocalizedString(@"App version %@", nil),
-                  [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]];
+                              [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]];
     versionLabel.textAlignment = NSTextAlignmentCenter;
     
-    return versionLabel;
+    [footerView addSubview:versionLabel];
+    return footerView;
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0,
-                                                                  tableView.frame.size.width, 100.0)];
+                                                                  tableView.frame.size.width, 150.0)];
+    headerView.backgroundColor = [UIColor whiteColor];
     
     UIImageView* logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
     logo.frame = CGRectMake((headerView.frame.size.width - 70.0) / 2, 10.0, 70.0, 70.0);
     [headerView addSubview:logo];
     
-    UILabel* companyName = [[UILabel alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(logo.frame),
+    UILabel* companyName = [[UILabel alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(logo.frame) + 10.0,
                                                                      headerView.frame.size.width, 20.0)];
+    companyName.font = [UIFont boldSystemFontOfSize:18.0];
     companyName.text = @"Contentful GmbH";
     companyName.textAlignment = NSTextAlignmentCenter;
     [headerView addSubview:companyName];

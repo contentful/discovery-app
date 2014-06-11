@@ -36,7 +36,6 @@
 		A1279D641948597C00EC6B05 /* CDATutorialView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D471948597C00EC6B05 /* CDATutorialView.m */; };
 		A1279D651948597C00EC6B05 /* UIApplication+Browser.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D491948597C00EC6B05 /* UIApplication+Browser.m */; };
 		A1279D661948597C00EC6B05 /* UIImage+AverageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D4B1948597C00EC6B05 /* UIImage+AverageColor.m */; };
-		A1279D671948597C00EC6B05 /* UILabel+Alignment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D4D1948597C00EC6B05 /* UILabel+Alignment.m */; };
 		A1279D681948597C00EC6B05 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D4F1948597C00EC6B05 /* UIView+Geometry.m */; };
 		A1279D7A1948598E00EC6B05 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1279D691948598E00EC6B05 /* about@2x.png */; };
 		A1279D7B1948598E00EC6B05 /* assets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1279D6A1948598E00EC6B05 /* assets@2x.png */; };
@@ -113,8 +112,6 @@
 		A1279D491948597C00EC6B05 /* UIApplication+Browser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+Browser.m"; path = "Code/UIApplication+Browser.m"; sourceTree = SOURCE_ROOT; };
 		A1279D4A1948597C00EC6B05 /* UIImage+AverageColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+AverageColor.h"; path = "Code/UIImage+AverageColor.h"; sourceTree = SOURCE_ROOT; };
 		A1279D4B1948597C00EC6B05 /* UIImage+AverageColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AverageColor.m"; path = "Code/UIImage+AverageColor.m"; sourceTree = SOURCE_ROOT; };
-		A1279D4C1948597C00EC6B05 /* UILabel+Alignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+Alignment.h"; path = "Code/UILabel+Alignment.h"; sourceTree = SOURCE_ROOT; };
-		A1279D4D1948597C00EC6B05 /* UILabel+Alignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Alignment.m"; path = "Code/UILabel+Alignment.m"; sourceTree = SOURCE_ROOT; };
 		A1279D4E1948597C00EC6B05 /* UIView+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Geometry.h"; path = "Code/UIView+Geometry.h"; sourceTree = SOURCE_ROOT; };
 		A1279D4F1948597C00EC6B05 /* UIView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Geometry.m"; path = "Code/UIView+Geometry.m"; sourceTree = SOURCE_ROOT; };
 		A1279D691948598E00EC6B05 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
@@ -300,8 +297,6 @@
 				A1279D491948597C00EC6B05 /* UIApplication+Browser.m */,
 				A1279D4A1948597C00EC6B05 /* UIImage+AverageColor.h */,
 				A1279D4B1948597C00EC6B05 /* UIImage+AverageColor.m */,
-				A1279D4C1948597C00EC6B05 /* UILabel+Alignment.h */,
-				A1279D4D1948597C00EC6B05 /* UILabel+Alignment.m */,
 				A1279D4E1948597C00EC6B05 /* UIView+Geometry.h */,
 				A1279D4F1948597C00EC6B05 /* UIView+Geometry.m */,
 			);
@@ -457,7 +452,6 @@
 				A1279D5C1948597C00EC6B05 /* CDAHelpViewController.m in Sources */,
 				A1279D651948597C00EC6B05 /* UIApplication+Browser.m in Sources */,
 				A1279D5B1948597C00EC6B05 /* CDAHeaderView.m in Sources */,
-				A1279D671948597C00EC6B05 /* UILabel+Alignment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
