@@ -7,6 +7,7 @@
 //
 
 #import "CDABasicCell.h"
+#import "UIView+Geometry.h"
 
 @interface CDABasicCell ()
 
@@ -30,22 +31,13 @@
 -(CGRect)frameForCellType:(CDACellType)cellType {
     switch (cellType) {
         case CDACellTypeAny:
-            return CGRectMake(15.0,
-                              self.frame.size.height - 1.0,
-                              self.frame.size.width - 15.0,
-                              1.0);
+            return CGRectMake(15.0, self.height - 1.0, self.width - 15.0, 1.0);
         
         case CDACellTypeFirst:
-            return CGRectMake(0.0,
-                              0.0,
-                              self.frame.size.width,
-                              1.0);
+            return CGRectMake(0.0, 0.0, self.width, 1.0);
             
         case CDACellTypeLast:
-            return CGRectMake(0.0,
-                              self.frame.size.height - 1.0,
-                              self.frame.size.width,
-                              1.0);
+            return CGRectMake(0.0, self.height - 1.0, self.width, 1.0);
             
     }
     

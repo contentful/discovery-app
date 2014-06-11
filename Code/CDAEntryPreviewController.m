@@ -13,6 +13,7 @@
 #import "CDAMarkdownCell.h"
 #import "CDAPrimitiveCell.h"
 #import "UIApplication+Browser.h"
+#import "UIView+Geometry.h"
 
 @interface CDAEntryPreviewController ()
 
@@ -84,15 +85,14 @@
         return nil;
     }
     
-    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0,
-                                                                  tableView.frame.size.width, 60.0)];
+    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.width, 60.0)];
     headerView.backgroundColor = [UIColor whiteColor];
     
     UISegmentedControl* displayTypeSelection = [[UISegmentedControl alloc]
                                                 initWithItems:@[ @"List", @"Preview" ]];
     
-    displayTypeSelection.frame = CGRectMake((headerView.frame.size.width - 250.0) / 2, 10.0,
-                                            250.0, displayTypeSelection.frame.size.height);
+    displayTypeSelection.frame = CGRectMake((headerView.width - 250.0) / 2, 10.0,
+                                            250.0, displayTypeSelection.height);
     displayTypeSelection.selectedSegmentIndex = tableView.numberOfSections == 1 ? 0 : 1;
     
     [displayTypeSelection addTarget:self

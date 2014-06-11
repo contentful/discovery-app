@@ -248,7 +248,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
         return nil;
     }
     
-    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 118.0)];
+    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.width, 118.0)];
     
     UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button.frame = CGRectMake(0.0, 10.0, 250.0, 44.0);
@@ -266,8 +266,8 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
     [view addSubview:button];
     
     button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(self.loadButton.frame.origin.x, CGRectGetMaxY(self.loadButton.frame) + 10.0,
-                              self.loadButton.frame.size.width, self.loadButton.frame.size.height);
+    button.frame = CGRectMake(self.loadButton.x, CGRectGetMaxY(self.loadButton.frame) + 10.0,
+                              self.loadButton.width, self.loadButton.height);
     
     [button addTarget:self
                action:@selector(loadDefaultSpaceTapped)
@@ -287,7 +287,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
         
         self.logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
         self.logoView.contentMode = UIViewContentModeScaleAspectFit;
-        self.logoView.frame = CGRectMake(0.0, 40.0, tableView.frame.size.width, 200.0);
+        self.logoView.frame = CGRectMake(0.0, 40.0, tableView.width, 200.0);
         self.logoView.userInteractionEnabled = YES;
         [containerView addSubview:self.logoView];
         

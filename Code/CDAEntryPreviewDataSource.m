@@ -17,6 +17,7 @@
 #import "CDAInlineMapCell.h"
 #import "CDAMarkdownCell.h"
 #import "CDAPrimitiveCell.h"
+#import "UIView+Geometry.h"
 
 NSString* const kAssetCell       = @"AssetCell";
 NSString* const kItemCell        = @"ItemCell";
@@ -47,7 +48,7 @@ NSString* const kTextCell        = @"TextCell";
         if (asset.isImage) {
             [cell.imageView cda_setImageWithAsset:asset];
         } else {
-            CGSize thumbSize = CGSizeMake(cell.frame.size.width, cell.frame.size.width * 1.25);
+            CGSize thumbSize = CGSizeMake(cell.width, cell.width * 1.25);
             CDAAssetThumbnailOperation* thumbOperation = [[CDAAssetThumbnailOperation alloc]
                                                           initWithAsset:asset
                                                           thumbnailSize:thumbSize];
@@ -260,28 +261,28 @@ NSString* const kTextCell        = @"TextCell";
     
     if ([@[ @(CDAFieldTypeObject), @(CDAFieldTypeText), @(CDAFieldTypeSymbol) ] containsObject:@(field.type)]) {
         value = [value isKindOfClass:[NSString class]] ? value : [value description];
-        return [(NSString*)value boundingRectWithSize:CGSizeMake(tableView.frame.size.width, INT_MAX)
+        return [(NSString*)value boundingRectWithSize:CGSizeMake(tableView.width, INT_MAX)
                                               options:NSStringDrawingUsesLineFragmentOrigin
                                            attributes:@{ NSFontAttributeName: [CDAMarkdownCell usedFont] }
                                               context:nil].size.height;
     }
     
     if (field.type == CDAFieldTypeLocation) {
-        return tableView.frame.size.width;
+        return tableView.width;
     }
     
     if ([value isKindOfClass:[CDAAsset class]]) {
         CDAAsset* asset = (CDAAsset*)value;
         
         if (asset.isImage) {
-            if (asset.size.width < tableView.frame.size.width) {
+            if (asset.size.width < tableView.width) {
                 return asset.size.height;
             }
             
-            return (tableView.frame.size.width - 20.0) / asset.size.width * asset.size.height;
+            return (tableView.width - 20.0) / asset.size.width * asset.size.height;
         }
         
-        return tableView.frame.size.width * 1.25;
+        return tableView.width * 1.25;
     }
     
     return UITableViewAutomaticDimension;

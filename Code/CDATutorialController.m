@@ -85,8 +85,8 @@
                                       
                                       self.pageControl.currentPage = 0;
                                       self.pageControl.numberOfPages = pages.count;
-                                      self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * pages.count,
-                                                                               self.scrollView.frame.size.height);
+                                      self.scrollView.contentSize = CGSizeMake(self.scrollView.width * pages.count,
+                                                                               self.scrollView.height);
                                   } failure:^(CDAResponse *response, NSError *error) {
                                       UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
                                                                                           message:error.localizedDescription

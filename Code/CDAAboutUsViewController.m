@@ -23,8 +23,7 @@
     NSIndexPath* indexPath = [NSIndexPath indexPathForRow:[self.tableView numberOfRowsInSection:0] - 1
                                                 inSection:0];
     CGRect lastRowFrame = [self.tableView rectForRowAtIndexPath:indexPath];
-    return self.tableView.frame.size.height - (lastRowFrame.origin.y +
-                                               lastRowFrame.size.height);
+    return self.tableView.height - (lastRowFrame.origin.y + lastRowFrame.size.height);
 }
 
 -(id)init {
@@ -108,8 +107,7 @@
 
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     UIView* footerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0,
-                                                                  tableView.frame.size.width,
-                                                                  self.emptySpaceHeight)];
+                                                                  tableView.width, self.emptySpaceHeight)];
     
     UILabel* versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.width, 50.0)];
     versionLabel.y = footerView.height - versionLabel.height;
@@ -123,16 +121,15 @@
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0,
-                                                                  tableView.frame.size.width, 150.0)];
+    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.width, 150.0)];
     headerView.backgroundColor = [UIColor whiteColor];
     
     UIImageView* logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
-    logo.frame = CGRectMake((headerView.frame.size.width - 70.0) / 2, 10.0, 70.0, 70.0);
+    logo.frame = CGRectMake((headerView.width - 70.0) / 2, 10.0, 70.0, 70.0);
     [headerView addSubview:logo];
     
     UILabel* companyName = [[UILabel alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(logo.frame) + 10.0,
-                                                                     headerView.frame.size.width, 20.0)];
+                                                                     headerView.width, 20.0)];
     companyName.font = [UIFont boldSystemFontOfSize:18.0];
     companyName.text = @"Contentful GmbH";
     companyName.textAlignment = NSTextAlignmentCenter;
