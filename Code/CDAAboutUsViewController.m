@@ -9,6 +9,7 @@
 #import <CGLMail/CGLMailHelper.h>
 
 #import "CDAAboutUsViewController.h"
+#import "CDATutorialController.h"
 #import "CDAWebController.h"
 #import "UIView+Geometry.h"
 
@@ -67,13 +68,16 @@
         case 2:
             cell.textLabel.text = NSLocalizedString(@"Contact us", nil);
             break;
+        case 3:
+            cell.textLabel.text = NSLocalizedString(@"View Tour", nil);
+            break;
     }
     
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
 }
 
 #pragma mark - UITableViewDelegate
@@ -102,6 +106,11 @@
                 [self presentViewController:mailVC animated:YES completion:nil];
             }
             
+            return;
+        }
+        case 3: {
+            CDATutorialController* tutorial = [CDATutorialController new];
+            [self presentViewController:tutorial animated:YES completion:nil];
             return;
         }
     }

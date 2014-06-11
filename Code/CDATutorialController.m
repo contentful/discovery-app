@@ -46,6 +46,8 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     self.scrollView.delegate = self;
     self.scrollView.pagingEnabled = YES;
