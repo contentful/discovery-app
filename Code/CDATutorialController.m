@@ -8,6 +8,7 @@
 
 #import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
 #import <ContentfulDeliveryAPI/UIImageView+CDAAsset.h>
+#import <DDPageControl/DDPageControl.h>
 
 #import "CDATutorialController.h"
 #import "CDATutorialView.h"
@@ -16,7 +17,7 @@
 @interface CDATutorialController () <UIScrollViewDelegate>
 
 @property (nonatomic) CDAClient* client;
-@property (nonatomic) UIPageControl* pageControl;
+@property (nonatomic) DDPageControl* pageControl;
 @property (nonatomic) UIScrollView* scrollView;
 
 @end
@@ -49,8 +50,10 @@
     self.scrollView.pagingEnabled = YES;
     [self.view addSubview:self.scrollView];
     
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0.0, self.view.height - 100.0,
-                                                                       100.0, 50.0)];
+    self.pageControl = [DDPageControl new];
+    self.pageControl.onColor = [UIColor blackColor];
+    self.pageControl.offColor = [UIColor lightGrayColor];
+    self.pageControl.frame = CGRectMake(0.0, self.view.height - 50.0, 100.0, 50.0);
     self.pageControl.x = (self.view.width - self.pageControl.width) / 2;
     [self.view addSubview:self.pageControl];
     
