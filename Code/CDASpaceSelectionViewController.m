@@ -124,7 +124,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 
 - (void)loadDefaultSpaceTapped
 {
-    [self showSpaceWithKey:@"cfexampleapi" accessToken:@"b4c0n73n7fu1"];
+    [self showSpaceWithKey:@"nvyqx9l6z9z9" accessToken:@"af972a4929249ff278fa09828a4f6d4580ff6cba1d0ca1ef12c0c9afda2fe57e"];
 }
 
 - (void)loadSpaceTapped
