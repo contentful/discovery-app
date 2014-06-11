@@ -6,6 +6,7 @@
 //
 //
 
+#import "BBUSplash.h"
 #import "CDAAppDelegate.h"
 #import "CDASpaceSelectionViewController.h"
 #import "CDATutorialController.h"
@@ -18,6 +19,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [CDASpaceSelectionViewController new];
     [self.window makeKeyAndVisible];
+ 
+    [BBUSplash showAnimated:NO];
+    [self performSelector:@selector(hideSplash) withObject:nil afterDelay:0.5];
     
     if ([[NSUserDefaults standardUserDefaults] stringForKey:CDASpaceKey].length == 0) {
         CDATutorialController* tutorial = [CDATutorialController new];
@@ -69,6 +73,12 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     return YES;
+}
+
+#pragma mark -
+
+-(void)hideSplash {
+    [BBUSplash hideAnimated:YES];
 }
 
 @end

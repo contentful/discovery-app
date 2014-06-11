@@ -57,6 +57,8 @@
 		A1279D931948863700EC6B05 /* btn_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1279D901948863700EC6B05 /* btn_blue@2x.png */; };
 		A1279D941948863700EC6B05 /* btn_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1279D911948863700EC6B05 /* btn_green@2x.png */; };
 		A1279D951948863700EC6B05 /* contentful-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1279D921948863700EC6B05 /* contentful-video.mp4 */; };
+		A1279D981948958C00EC6B05 /* BBUSplash.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D971948958C00EC6B05 /* BBUSplash.m */; };
+		A1279D9B194895E000EC6B05 /* UIDevice+BBU.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +139,10 @@
 		A1279D901948863700EC6B05 /* btn_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_blue@2x.png"; sourceTree = "<group>"; };
 		A1279D911948863700EC6B05 /* btn_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_green@2x.png"; sourceTree = "<group>"; };
 		A1279D921948863700EC6B05 /* contentful-video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "contentful-video.mp4"; sourceTree = "<group>"; };
+		A1279D961948958C00EC6B05 /* BBUSplash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBUSplash.h; path = Code/BBUSplash.h; sourceTree = SOURCE_ROOT; };
+		A1279D971948958C00EC6B05 /* BBUSplash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBUSplash.m; path = Code/BBUSplash.m; sourceTree = SOURCE_ROOT; };
+		A1279D99194895E000EC6B05 /* UIDevice+BBU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+BBU.h"; path = "Code/UIDevice+BBU.h"; sourceTree = SOURCE_ROOT; };
+		A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+BBU.m"; path = "Code/UIDevice+BBU.m"; sourceTree = SOURCE_ROOT; };
 		E187785852B64298B4B6751B /* libPods-Discovery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Discovery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -193,6 +199,8 @@
 				A1279D8F19485B0500EC6B05 /* Content Types */,
 				A1279D8C194859B700EC6B05 /* Entries */,
 				A1279D8D194859CB00EC6B05 /* Spaces */,
+				A1279D961948958C00EC6B05 /* BBUSplash.h */,
+				A1279D971948958C00EC6B05 /* BBUSplash.m */,
 				A1279D1E1948597C00EC6B05 /* CDAAboutUsViewController.h */,
 				A1279D1F1948597C00EC6B05 /* CDAAboutUsViewController.m */,
 				A1279D201948597C00EC6B05 /* CDAAppDelegate.h */,
@@ -304,6 +312,8 @@
 			children = (
 				A1279D481948597C00EC6B05 /* UIApplication+Browser.h */,
 				A1279D491948597C00EC6B05 /* UIApplication+Browser.m */,
+				A1279D99194895E000EC6B05 /* UIDevice+BBU.h */,
+				A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */,
 				A1279D4A1948597C00EC6B05 /* UIImage+AverageColor.h */,
 				A1279D4B1948597C00EC6B05 /* UIImage+AverageColor.m */,
 				A1279D4E1948597C00EC6B05 /* UIView+Geometry.h */,
@@ -441,6 +451,7 @@
 			files = (
 				A1279D681948597C00EC6B05 /* UIView+Geometry.m in Sources */,
 				A1279CFB1948555700EC6B05 /* main.m in Sources */,
+				A1279D981948958C00EC6B05 /* BBUSplash.m in Sources */,
 				A1279D5A1948597C00EC6B05 /* CDAEntryPreviewDataSource.m in Sources */,
 				A1279D581948597C00EC6B05 /* CDAContentTypesViewController.m in Sources */,
 				A1279D601948597C00EC6B05 /* CDASpaceSelectionViewController.m in Sources */,
@@ -448,6 +459,7 @@
 				A1279D5F1948597C00EC6B05 /* CDAPrimitiveCell.m in Sources */,
 				A1279D611948597C00EC6B05 /* CDASpaceViewController.m in Sources */,
 				A1279D571948597C00EC6B05 /* CDABasicCell.m in Sources */,
+				A1279D9B194895E000EC6B05 /* UIDevice+BBU.m in Sources */,
 				A1279D5E1948597C00EC6B05 /* CDAMarkdownCell.mm in Sources */,
 				A1279D631948597C00EC6B05 /* CDATutorialController.m in Sources */,
 				A1279D541948597C00EC6B05 /* CDAAssetPreviewCell.m in Sources */,
