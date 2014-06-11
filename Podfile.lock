@@ -1,25 +1,28 @@
 PODS:
-  - AFNetworking (2.2.4):
+  - AFNetworking (2.3.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
     - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.2.4):
+  - AFNetworking/NSURLConnection (2.3.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.2.4):
-    - AFNetworking/NSURLConnection
-  - AFNetworking/Reachability (2.2.4)
-  - AFNetworking/Security (2.2.4)
-  - AFNetworking/Serialization (2.2.4)
-  - AFNetworking/UIKit (2.2.4):
+  - AFNetworking/NSURLSession (2.3.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.3.0)
+  - AFNetworking/Security (2.3.0)
+  - AFNetworking/Serialization (2.3.0)
+  - AFNetworking/UIKit (2.3.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AnimatedGIFImageSerialization (0.0.1)
   - Bypass (1.0.1)
+  - CGLMail (0.1.1)
   - ContentfulDeliveryAPI (1.1.0):
     - AFNetworking
     - HRCoder
@@ -28,22 +31,27 @@ PODS:
   - DDPageControl (0.1)
   - HRCoder (1.3.1)
   - ISO8601DateFormatter (0.7)
+  - TSMiniWebBrowser@dblock (1.1)
 
 DEPENDENCIES:
   - AnimatedGIFImageSerialization
   - Bypass
+  - CGLMail
   - ContentfulDeliveryAPI
   - CSStickyHeaderFlowLayout
   - DDPageControl
+  - TSMiniWebBrowser@dblock
 
 SPEC CHECKSUMS:
-  AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
+  AFNetworking: e7abefee64543aa978c9d759bc8892402b1ed7d1
   AnimatedGIFImageSerialization: 59d27f2411f5669d35c8d99f32b1b7ff6bd892d0
   Bypass: 225bc63ebb09e5674c1fc460b1708e775f68f52f
+  CGLMail: ba03e1a69db3c27bad925fe1270cd99fada5ed69
   ContentfulDeliveryAPI: 8e185e2dfd5b9284c6f53a73e16d27fc4b06afbc
   CSStickyHeaderFlowLayout: b6530bc5f95d656b6963ddb6dd692c0f61890a98
   DDPageControl: 86d07bda58e325a427fb0d7c8fb650add2ff35c2
   HRCoder: 0952826ddf4213a11be775d01446f61a5df987a4
   ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
+  TSMiniWebBrowser@dblock: 4e73ee955fcf2e9f5d98f7a17460454ac059bc37
 
 COCOAPODS: 0.33.1

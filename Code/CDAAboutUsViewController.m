@@ -6,7 +6,10 @@
 //
 //
 
+#import <CGLMail/CGLMailHelper.h>
+
 #import "CDAAboutUsViewController.h"
+#import "CDAWebController.h"
 #import "UIView+Geometry.h"
 
 @interface CDAAboutUsViewController ()
@@ -89,12 +92,23 @@
         case 1:
             urlString = @"https://support.contentful.com/hc/en-us/requests/new/?utm_source=Discovery%20app&utm_medium=iOS&utm_campaign=feedback";
             break;
-        case 2:
-            urlString = @"mailto:voice%40contentful.com?subject=Question%20about%20Contentful&body=%0A%0A%2F%2F%20sent%20via%20the%20Discovery%20app";
-            break;
+        case 2: {
+            UIViewController *mailVC = [CGLMailHelper mailViewControllerWithRecipients:@[@"voice@contentful.com"] subject:@"Question about Contentful" message:@"\n\n" isHTML:NO includeAppInfo:YES completion:nil];
+            
+            if (!mailVC) {
+                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Cannot send mail.", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+                [alert show];
+            } else {
+                [self presentViewController:mailVC animated:YES completion:nil];
+            }
+            
+            return;
+        }
     }
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+    CDAWebController* webController = [[CDAWebController alloc]
+                                       initWithURL:[NSURL URLWithString:urlString]];
+    [self.navigationController pushViewController:webController animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -108,6 +122,7 @@
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     UIView* footerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0,
                                                                   tableView.width, self.emptySpaceHeight)];
+    footerView.userInteractionEnabled = NO;
     
     UILabel* versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.width, 50.0)];
     versionLabel.y = footerView.height - versionLabel.height;

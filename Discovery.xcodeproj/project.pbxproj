@@ -59,6 +59,7 @@
 		A1279D951948863700EC6B05 /* contentful-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1279D921948863700EC6B05 /* contentful-video.mp4 */; };
 		A1279D981948958C00EC6B05 /* BBUSplash.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D971948958C00EC6B05 /* BBUSplash.m */; };
 		A1279D9B194895E000EC6B05 /* UIDevice+BBU.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */; };
+		A1D6E73B1949024000725E4F /* CDAWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E73A1949024000725E4F /* CDAWebController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +144,8 @@
 		A1279D971948958C00EC6B05 /* BBUSplash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBUSplash.m; path = Code/BBUSplash.m; sourceTree = SOURCE_ROOT; };
 		A1279D99194895E000EC6B05 /* UIDevice+BBU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+BBU.h"; path = "Code/UIDevice+BBU.h"; sourceTree = SOURCE_ROOT; };
 		A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+BBU.m"; path = "Code/UIDevice+BBU.m"; sourceTree = SOURCE_ROOT; };
+		A1D6E7391949024000725E4F /* CDAWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDAWebController.h; path = Code/CDAWebController.h; sourceTree = SOURCE_ROOT; };
+		A1D6E73A1949024000725E4F /* CDAWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDAWebController.m; path = Code/CDAWebController.m; sourceTree = SOURCE_ROOT; };
 		E187785852B64298B4B6751B /* libPods-Discovery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Discovery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -211,9 +214,10 @@
 				A1279D451948597C00EC6B05 /* CDATutorialController.m */,
 				A1279D461948597C00EC6B05 /* CDATutorialView.h */,
 				A1279D471948597C00EC6B05 /* CDATutorialView.m */,
+				A1D6E7391949024000725E4F /* CDAWebController.h */,
+				A1D6E73A1949024000725E4F /* CDAWebController.m */,
 			);
-			name = Code;
-			path = Discovery;
+			path = Code;
 			sourceTree = "<group>";
 		};
 		A1279CF51948555700EC6B05 /* Supporting Files */ = {
@@ -476,6 +480,7 @@
 				A1279D5C1948597C00EC6B05 /* CDAHelpViewController.m in Sources */,
 				A1279D651948597C00EC6B05 /* UIApplication+Browser.m in Sources */,
 				A1279D5B1948597C00EC6B05 /* CDAHeaderView.m in Sources */,
+				A1D6E73B1949024000725E4F /* CDAWebController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
