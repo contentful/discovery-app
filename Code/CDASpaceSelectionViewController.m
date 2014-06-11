@@ -14,6 +14,7 @@
 #import "CDATextEntryCell.h"
 #import "CDASpaceSelectionViewController.h"
 #import "UIApplication+Browser.h"
+#import "UIView+Geometry.h"
 
 NSString* const CDAAccessTokenKey    = @"CDAAccessTokenKey";
 NSString* const CDASpaceKey          = @"CDASpaceKey";
@@ -48,6 +49,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
+        self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
         self.title = NSLocalizedString(@"Space selection", nil);
         
         [self.tableView registerClass:[CDATextEntryCell class]
@@ -226,7 +228,8 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return section == 0 ? 220.0 : UITableViewAutomaticDimension;
+    CGFloat topHeight = 220.0 + ([UIScreen mainScreen].bounds.size.height - 480.0);
+    return section == 0 ? topHeight : UITableViewAutomaticDimension;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -248,10 +251,14 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
     UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 118.0)];
     
     UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(10.0, 10.0, view.frame.size.width - 20.0, 44.0);
+    button.frame = CGRectMake(0.0, 10.0, 250.0, 44.0);
+    button.x = (tableView.width - button.width) / 2;
     
     [button addTarget:self action:@selector(loadSpaceTapped) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btn_blue"] forState:UIControlStateNormal];
     [button setTitle:NSLocalizedString(@"Load Space", nil) forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(5.0, -225.0, 5.0, 5.0)];
     
     self.loadButton = button;
     self.loadButton.enabled = self.done;
@@ -265,15 +272,10 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
     [button addTarget:self
                action:@selector(loadDefaultSpaceTapped)
      forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btn_green"] forState:UIControlStateNormal];
     [button setTitle:NSLocalizedString(@"Demo Space", nil) forState:UIControlStateNormal];
-    
-    [view addSubview:button];
-    
-    button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(view.frame.size.width - 64.0, view.frame.size.height - 64.0, 44.0, 44.0);
-    
-    [button addTarget:self action:@selector(showHelp) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"help"] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleEdgeInsets:self.loadButton.titleEdgeInsets];
     
     [view addSubview:button];
     return view;
@@ -292,6 +294,13 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
         [self.logoView addGestureRecognizer:[[UITapGestureRecognizer alloc]
                                              initWithTarget:self action:@selector(logoTapped)]];
         
+        UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(tableView.width - 50.0, 20.0, 44.0, 44.0);
+        
+        [button addTarget:self action:@selector(showHelp) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:[UIImage imageNamed:@"help"] forState:UIControlStateNormal];
+        
+        [containerView addSubview:button];
         return containerView;
     }
     
