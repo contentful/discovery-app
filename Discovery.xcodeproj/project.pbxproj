@@ -54,6 +54,7 @@
 		A1279D881948598E00EC6B05 /* video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1279D771948598E00EC6B05 /* video@2x.png */; };
 		A1279D891948598E00EC6B05 /* word@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1279D781948598E00EC6B05 /* word@2x.png */; };
 		A1279D8A1948598E00EC6B05 /* zip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1279D791948598E00EC6B05 /* zip@2x.png */; };
+		A1279D951948863700EC6B05 /* contentful-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1279D921948863700EC6B05 /* contentful-video.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +132,7 @@
 		A1279D771948598E00EC6B05 /* video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video@2x.png"; sourceTree = "<group>"; };
 		A1279D781948598E00EC6B05 /* word@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "word@2x.png"; sourceTree = "<group>"; };
 		A1279D791948598E00EC6B05 /* zip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zip@2x.png"; sourceTree = "<group>"; };
+		A1279D921948863700EC6B05 /* contentful-video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "contentful-video.mp4"; sourceTree = "<group>"; };
 		E187785852B64298B4B6751B /* libPods-Discovery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Discovery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -219,6 +221,7 @@
 			children = (
 				A1279D691948598E00EC6B05 /* about@2x.png */,
 				A1279D6A1948598E00EC6B05 /* assets@2x.png */,
+				A1279D921948863700EC6B05 /* contentful-video.mp4 */,
 				A1279D6B1948598E00EC6B05 /* document@2x.png */,
 				A1279D6C1948598E00EC6B05 /* entries@2x.png */,
 				A1279D6D1948598E00EC6B05 /* excel@2x.png */,
@@ -374,6 +377,7 @@
 				A1279D801948598E00EC6B05 /* help@2x.png in Resources */,
 				A1279D7A1948598E00EC6B05 /* about@2x.png in Resources */,
 				A1279D7D1948598E00EC6B05 /* entries@2x.png in Resources */,
+				A1279D951948863700EC6B05 /* contentful-video.mp4 in Resources */,
 				A1279D851948598E00EC6B05 /* pdf@2x.png in Resources */,
 				A1279D011948555700EC6B05 /* Images.xcassets in Resources */,
 				A1279D7F1948598E00EC6B05 /* flag@2x.png in Resources */,

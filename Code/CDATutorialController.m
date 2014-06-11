@@ -9,6 +9,7 @@
 #import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
 #import <ContentfulDeliveryAPI/UIImageView+CDAAsset.h>
 #import <DDPageControl/DDPageControl.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 #import "CDATutorialController.h"
 #import "CDATutorialView.h"
@@ -64,6 +65,12 @@
                                       
                                       for (CDAEntry* page in pages) {
                                           CDATutorialView* tutorialView = [[CDATutorialView alloc] initWithFrame:self.scrollView.bounds];
+                                          
+                                          if (xCoordinate < 1.0) {
+                                              tutorialView.imageView.userInteractionEnabled = YES;
+                                              [tutorialView.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(playVideo)]];
+                                          }
+                                          
                                           tutorialView.x = xCoordinate;
                                           xCoordinate += tutorialView.width;
                                           
@@ -74,11 +81,6 @@
                                           tutorialView.headline.text = page.fields[@"headline"];
                                           
                                           [self.scrollView addSubview:tutorialView];
-                                          
-                                          if (xCoordinate < 1.0) {
-                                              tutorialView.imageView.userInteractionEnabled = YES;
-                                              [tutorialView addGestureRecognizer:[[UIGestureRecognizer alloc] initWithTarget:self action:@selector(playVideo)]];
-                                          }
                                       }
                                       
                                       self.pageControl.currentPage = 0;
@@ -98,7 +100,9 @@
 #pragma mark - Actions
 
 -(void)playVideo {
-    // TODO: Play video
+    NSURL* movieURL = [[NSBundle mainBundle] URLForResource:@"contentful-video" withExtension:@"mp4"];
+    MPMoviePlayerViewController* moviePlayer = [[MPMoviePlayerViewController alloc] initWithContentURL:movieURL];
+    [self presentMoviePlayerViewControllerAnimated:moviePlayer];
 }
 
 #pragma mark - UIScrollViewDelegate
