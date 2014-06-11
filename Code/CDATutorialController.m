@@ -7,6 +7,7 @@
 //
 
 #import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
+#import <ContentfulDeliveryAPI/UIImageView+CDAAsset.h>
 
 #import "CDATutorialController.h"
 #import "CDATutorialView.h"

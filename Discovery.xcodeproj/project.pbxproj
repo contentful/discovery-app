@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28643A89DDE546D5ABD1A0B1 /* libPods-Discovery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E187785852B64298B4B6751B /* libPods-Discovery.a */; };
 		A1279CEF1948555700EC6B05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1279CEE1948555700EC6B05 /* Foundation.framework */; };
 		A1279CF11948555700EC6B05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1279CF01948555700EC6B05 /* CoreGraphics.framework */; };
 		A1279CF31948555700EC6B05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1279CF21948555700EC6B05 /* UIKit.framework */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01EE5E5497134C419419C9FF /* Pods-Discovery.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Discovery.xcconfig"; path = "../Pods/Pods-Discovery.xcconfig"; sourceTree = "<group>"; };
 		A1279CEB1948555700EC6B05 /* Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Discovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1279CEE1948555700EC6B05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A1279CF01948555700EC6B05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -132,6 +134,7 @@
 		A1279D771948598E00EC6B05 /* video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video@2x.png"; sourceTree = "<group>"; };
 		A1279D781948598E00EC6B05 /* word@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "word@2x.png"; sourceTree = "<group>"; };
 		A1279D791948598E00EC6B05 /* zip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zip@2x.png"; sourceTree = "<group>"; };
+		E187785852B64298B4B6751B /* libPods-Discovery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Discovery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,7 @@
 				A1279CF11948555700EC6B05 /* CoreGraphics.framework in Frameworks */,
 				A1279CF31948555700EC6B05 /* UIKit.framework in Frameworks */,
 				A1279CEF1948555700EC6B05 /* Foundation.framework in Frameworks */,
+				28643A89DDE546D5ABD1A0B1 /* libPods-Discovery.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +177,7 @@
 				A1279CF01948555700EC6B05 /* CoreGraphics.framework */,
 				A1279CEE1948555700EC6B05 /* Foundation.framework */,
 				A1279CF21948555700EC6B05 /* UIKit.framework */,
+				E187785852B64298B4B6751B /* libPods-Discovery.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				A1279CF61948555700EC6B05 /* Discovery-Info.plist */,
 				A1279CFC1948555700EC6B05 /* Discovery-Prefix.pch */,
 				A1279CFA1948555700EC6B05 /* main.m */,
+				01EE5E5497134C419419C9FF /* Pods-Discovery.xcconfig */,
 			);
 			name = "Supporting Files";
 			path = Supporting_Files;
@@ -318,9 +324,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1279D171948555700EC6B05 /* Build configuration list for PBXNativeTarget "Discovery" */;
 			buildPhases = (
+				3B4B92B6FD16422CBA3F9A83 /* Check Pods Manifest.lock */,
 				A1279CE71948555700EC6B05 /* Sources */,
 				A1279CE81948555700EC6B05 /* Frameworks */,
 				A1279CE91948555700EC6B05 /* Resources */,
+				E3AFA1B73EC64DACB0C5C91C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -385,6 +393,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B4B92B6FD16422CBA3F9A83 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3AFA1B73EC64DACB0C5C91C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Discovery-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A1279CE71948555700EC6B05 /* Sources */ = {
@@ -495,12 +536,13 @@
 		};
 		A1279D181948555700EC6B05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01EE5E5497134C419419C9FF /* Pods-Discovery.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting_Files/Discovery-Prefix.pch";
-				INFOPLIST_FILE = "Discovery/Discovery-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting_Files/Discovery-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -508,12 +550,13 @@
 		};
 		A1279D191948555700EC6B05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01EE5E5497134C419419C9FF /* Pods-Discovery.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting_Files/Discovery-Prefix.pch";
-				INFOPLIST_FILE = "Discovery/Discovery-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting_Files/Discovery-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
