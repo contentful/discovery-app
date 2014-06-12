@@ -13,6 +13,7 @@
 #import "CDAMarkdownCell.h"
 #import "CDAPrimitiveCell.h"
 #import "UIApplication+Browser.h"
+#import "UITableView+EmptyView.h"
 #import "UIView+Geometry.h"
 
 @interface CDAEntryPreviewController ()
@@ -36,6 +37,8 @@
         
         self.tableView.dataSource = self.dataSource;
         self.tableView.delegate = self.dataSource;
+        
+        [self.tableView cda_onEmptynessShowLabelWithTitle:NSLocalizedString(@"Entry has no content.", nil)];
         
         [self.tableView registerClass:[CDAAssetPreviewCell class] forCellReuseIdentifier:kAssetCell];
         [self.tableView registerClass:NSClassFromString(@"CDAResourceTableViewCell")

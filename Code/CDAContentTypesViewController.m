@@ -8,6 +8,7 @@
 
 #import "CDAContentTypesViewController.h"
 #import "CDAEntryPreviewController.h"
+#import "UITableView+EmptyView.h"
 #import "UIView+Geometry.h"
 
 @interface CDAContentTypesViewController () <CDAEntriesViewControllerDelegate>
@@ -35,6 +36,8 @@
     entriesVC.query = @{ @"content_type": contentType.identifier };
     entriesVC.showSearchBar = YES;
     entriesVC.title = contentType.name;
+    
+    [entriesVC.tableView cda_onEmptynessShowLabelWithTitle:NSLocalizedString(@"No matching entries found.", nil)];
     
     [self.navigationController pushViewController:entriesVC animated:YES];
 }
