@@ -45,7 +45,7 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 }
 
 #pragma mark - UITableViewDataSource
@@ -146,7 +146,7 @@
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.width, 150.0)];
-    headerView.backgroundColor = [UIColor whiteColor];
+    headerView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     UIImageView* logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
     logo.frame = CGRectMake((headerView.width - 70.0) / 2, 10.0, 70.0, 70.0);
