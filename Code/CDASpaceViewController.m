@@ -40,6 +40,7 @@
     }
     
     _aboutUs = [CDAAboutUsViewController new];
+    _aboutUs.navigationItem.rightBarButtonItem = self.logoutButton;
     
     return _aboutUs;
 }
