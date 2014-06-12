@@ -18,6 +18,7 @@
 
 @interface CDAAssetListViewController ()
 
+@property (nonatomic) UIView* emptyView;
 @property (nonatomic) NSOperationQueue* thumbnailQueue;
 
 @end
@@ -103,6 +104,30 @@
     }
     
     return cell;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSInteger numberOfItems = [super collectionView:collectionView numberOfItemsInSection:section];
+    
+    if (numberOfItems == 0) {
+        UILabel* emptynessLabel = [[UILabel alloc] initWithFrame:self.collectionView.bounds];
+        emptynessLabel.font = [UIFont boldSystemFontOfSize:20.0];
+        emptynessLabel.text = NSLocalizedString(@"No matching assets found.", nil);
+        emptynessLabel.textAlignment = NSTextAlignmentCenter;
+        [self.collectionView addSubview:emptynessLabel];
+        
+        self.emptyView = emptynessLabel;
+        
+        self.emptyView.alpha = 0.0;
+        [UIView animateWithDuration:0.5 animations:^{
+            self.emptyView.alpha = 1.0;
+        }];
+    } else {
+        [self.emptyView removeFromSuperview];
+        self.emptyView = nil;
+    }
+    
+    return numberOfItems;
 }
 
 #pragma mark - UICollectionViewDelegate
