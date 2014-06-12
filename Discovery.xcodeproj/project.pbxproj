@@ -347,6 +347,7 @@
 				A1279CE81948555700EC6B05 /* Frameworks */,
 				A1279CE91948555700EC6B05 /* Resources */,
 				E3AFA1B73EC64DACB0C5C91C /* Copy Pods Resources */,
+				A1D39569194A08D70083D8E2 /* Show TODOs and FIXMEs */,
 			);
 			buildRules = (
 			);
@@ -430,6 +431,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		A1D39569194A08D70083D8E2 /* Show TODOs and FIXMEs */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Show TODOs and FIXMEs";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | grep -v '/Pods/' | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
 		};
 		E3AFA1B73EC64DACB0C5C91C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
