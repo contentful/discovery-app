@@ -29,6 +29,7 @@ NSString* const kTextCell        = @"TextCell";
 
 @property (nonatomic) NSMutableDictionary* customCellSizes;
 @property (nonatomic, weak) CDAEntry* entry;
+@property (nonatomic) NSArray* fields;
 @property (nonatomic) NSOperationQueue* thumbnailQueue;
 
 @end
@@ -90,7 +91,7 @@ NSString* const kTextCell        = @"TextCell";
 }
 
 -(CDAField*)fieldForSection:(NSInteger)section {
-    return self.entry.contentType.fields[section];
+    return self.fields[section];
 }
 
 -(id)initWithEntry:(CDAEntry*)entry {
@@ -100,6 +101,16 @@ NSString* const kTextCell        = @"TextCell";
         self.entry = entry;
         self.thumbnailQueue = [NSOperationQueue new];
         self.thumbnailQueue.maxConcurrentOperationCount = 1;
+        
+        NSMutableArray* fields = [@[] mutableCopy];
+        
+        for (CDAField* field in self.entry.contentType.fields) {
+            if ([self.entry.fields.allKeys containsObject:field.identifier]) {
+                [fields addObject:field];
+            }
+        }
+        
+        self.fields = [fields copy];
     }
     return self;
 }
