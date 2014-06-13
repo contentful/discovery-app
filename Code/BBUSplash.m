@@ -54,12 +54,12 @@
     switch ([self orientation]) {
         case UIInterfaceOrientationLandscapeLeft:
         case UIInterfaceOrientationLandscapeRight:
-            return [UIImage imageNamed:@"Default-Landscape"];
+            return [UIImage imageNamed:@"LaunchImage-Landscape"];
         default:
             break;
     }
     
-    return [UIImage imageNamed:@"Default-Portrait"];
+    return [UIImage imageNamed:@"LaunchImage-Portrait"];
 }
 
 +(UIInterfaceOrientation)orientation {
