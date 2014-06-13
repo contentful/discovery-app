@@ -72,6 +72,7 @@
     [[NSUserDefaults standardUserDefaults] setValue:spaceKey forKey:CDASpaceKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
     return YES;
 }
 
