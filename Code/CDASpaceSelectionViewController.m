@@ -101,6 +101,8 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
     [self stopSpinningLogo];
     
     [self.tableView reloadData];
+    
+    [UIApplication sharedApplication].currentLocale = nil;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
