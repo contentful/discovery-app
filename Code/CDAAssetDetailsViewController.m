@@ -20,6 +20,7 @@
 @property (nonatomic) CDAAsset* asset;
 @property (nonatomic) NSArray* keyPathsOrder;
 @property (nonatomic) NSDictionary* keyPathsToShow;
+@property (nonatomic, readonly) UIBarButtonItem* logoutButton;
 
 @end
 
@@ -37,6 +38,7 @@
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
         self.asset = asset;
+        self.navigationItem.rightBarButtonItem = self.logoutButton;
         self.title = self.asset.fields[@"title"];
         
         self.keyPathsOrder = @[ @"fields.title", @"fields.description", @"sys.createdAt",
@@ -65,11 +67,22 @@
     return self;
 }
 
+-(UIBarButtonItem *)logoutButton {
+    return [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"logout"]
+                                            style:UIBarButtonItemStyleBordered
+                                           target:self
+                                           action:@selector(logout)];
+}
+
 #pragma mark - Actions
 
 -(void)documentTapped {
     CDAAssetPreviewController* preview = [[CDAAssetPreviewController alloc] initWithAsset:self.asset];
     [self.navigationController pushViewController:preview animated:YES];
+}
+
+-(void)logout {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UICollectionViewDataSource

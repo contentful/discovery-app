@@ -13,6 +13,8 @@
 
 @interface CDAContentTypesViewController () <CDAEntriesViewControllerDelegate>
 
+@property (nonatomic, readonly) UIBarButtonItem* logoutButton;
+
 @end
 
 #pragma mark -
@@ -33,6 +35,7 @@
     entriesVC.client = self.client;
     entriesVC.delegate = self;
     entriesVC.locale = self.locale;
+    entriesVC.navigationItem.rightBarButtonItem = self.logoutButton;
     entriesVC.query = @{ @"content_type": contentType.identifier };
     entriesVC.showSearchBar = YES;
     entriesVC.title = contentType.name;
@@ -53,11 +56,25 @@
     return self;
 }
 
+-(UIBarButtonItem *)logoutButton {
+    return [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"logout"]
+                                            style:UIBarButtonItemStyleBordered
+                                           target:self
+                                           action:@selector(logout)];
+}
+
+#pragma mark - Actions
+
+-(void)logout {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - CDAEntriesViewControllerDelegate
 
 -(void)entriesViewController:(CDAEntriesViewController *)entriesViewController
        didSelectRowWithEntry:(CDAEntry *)entry {
     CDAEntryPreviewController* previewController = [[CDAEntryPreviewController alloc] initWithEntry:entry];
+    previewController.navigationItem.rightBarButtonItem = self.logoutButton;
     [self.navigationController pushViewController:previewController animated:YES];
 }
 
