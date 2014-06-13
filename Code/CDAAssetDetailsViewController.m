@@ -87,7 +87,8 @@
         long long byteCount = [[self.asset valueForKeyPath:key] longLongValue];
         cell.detailTextLabel.text = [NSByteCountFormatter stringFromByteCount:byteCount countStyle:NSByteCountFormatterCountStyleFile];
     } else if ([key isEqualToString:@"size"]) {
-        cell.detailTextLabel.text = NSStringFromCGSize([[self.asset valueForKeyPath:key] CGSizeValue]);
+        CGSize size = [[self.asset valueForKeyPath:key] CGSizeValue];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0f x %.0f px", size.width, size.height];
     } else if ([key isEqualToString:@"sys.createdAt"]) {
         cell.detailTextLabel.text = [NSDateFormatter localizedStringFromDate:[self.asset valueForKeyPath:key]
                                                                    dateStyle:NSDateFormatterMediumStyle
