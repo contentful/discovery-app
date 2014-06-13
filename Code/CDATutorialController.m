@@ -13,6 +13,7 @@
 
 #import "CDATutorialController.h"
 #import "CDATutorialView.h"
+#import "UIDevice+BBU.h"
 #import "UIView+Geometry.h"
 
 @interface CDATutorialController () <UIScrollViewDelegate>
@@ -76,7 +77,16 @@
                                           tutorialView.x = xCoordinate;
                                           xCoordinate += tutorialView.width;
                                           
-                                          [tutorialView.backgroundImageView cda_setImageWithAsset:entry.fields[@"backgroundImage"]];
+                                          switch ([UIDevice bbu_type]) {
+                                              case BBUDeviceTypePad:
+                                              case BBUDeviceTypePadRetina:
+                                                  [tutorialView.backgroundImageView cda_setImageWithAsset:entry.fields[@"backgroundImageIPad"]];
+                                                  break;
+                                              default:
+                                                  [tutorialView.backgroundImageView cda_setImageWithAsset:entry.fields[@"backgroundImage"]];
+                                                  break;
+                                          }
+                                          
                                           [tutorialView.imageView cda_setImageWithAsset:page.fields[@"asset"]];
                                           
                                           tutorialView.body.text = page.fields[@"content"];
