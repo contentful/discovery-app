@@ -276,6 +276,8 @@
 				A1279D291948597C00EC6B05 /* CDAAssetPreviewController.m */,
 				A1279D2A1948597C00EC6B05 /* CDAAssetThumbnailOperation.h */,
 				A1279D2B1948597C00EC6B05 /* CDAAssetThumbnailOperation.m */,
+				A1279D2C1948597C00EC6B05 /* CDABasicCell.h */,
+				A1279D2D1948597C00EC6B05 /* CDABasicCell.m */,
 				A1279D341948597C00EC6B05 /* CDAHeaderView.h */,
 				A1279D351948597C00EC6B05 /* CDAHeaderView.m */,
 			);
@@ -285,8 +287,6 @@
 		A1279D8C194859B700EC6B05 /* Entries */ = {
 			isa = PBXGroup;
 			children = (
-				A1279D2C1948597C00EC6B05 /* CDABasicCell.h */,
-				A1279D2D1948597C00EC6B05 /* CDABasicCell.m */,
 				A1279D301948597C00EC6B05 /* CDAEntryPreviewController.h */,
 				A1279D311948597C00EC6B05 /* CDAEntryPreviewController.m */,
 				A1279D321948597C00EC6B05 /* CDAEntryPreviewDataSource.h */,
