@@ -6,6 +6,8 @@
 //
 //
 
+#import <Aspects/Aspects.h>
+
 #import "CDAContentTypesViewController.h"
 #import "CDAEntryPreviewController.h"
 #import "UITableView+EmptyView.h"
@@ -97,6 +99,10 @@
         
         [cell.contentView addSubview:entryCountLabel];
     }
+    
+    [cell aspect_hookSelector:@selector(layoutSubviews) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+        cell.detailTextLabel.width = cell.width - 120.0;
+    } error:nil];
     
     [self.client fetchEntriesMatching:@{ @"content_type": contentType.identifier, @"limit": @0 }
                               success:^(CDAResponse *response, CDAArray *array) {
