@@ -107,7 +107,8 @@
 
 -(UIImage *)snapshot {
     if (!_snapshot || [_snapshot isBlack]) {
-        UIImage* image = [UIImage imageNamed:[[self class] imageNameForMimeType:self.asset.MIMEType]];
+        NSString* imageName = [[self class] imageNameForMimeType:self.asset.MIMEType];
+        UIImage* image = [UIImage imageNamed:imageName];
         return image;
     }
     
