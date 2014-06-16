@@ -33,6 +33,7 @@
 -(id)init {
     self = [super init];
     if (self) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
         self.tabBarItem.image = [UIImage imageNamed:@"about"];
         self.title = NSLocalizedString(@"About Us", nil);
         
