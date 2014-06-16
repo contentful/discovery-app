@@ -252,7 +252,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
     
     UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.width, 118.0)];
     
-    UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0.0, 10.0, 250.0, 44.0);
     button.x = (tableView.width - button.width) / 2;
     
@@ -267,7 +267,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
     
     [view addSubview:button];
     
-    button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(self.loadButton.x, CGRectGetMaxY(self.loadButton.frame) + 10.0,
                               self.loadButton.width, self.loadButton.height);
     
