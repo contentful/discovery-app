@@ -6,6 +6,7 @@
 //
 //
 
+#import <Aspects/Aspects.h>
 #import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
 #import <ContentfulDeliveryAPI/UIImageView+CDAAsset.h>
 
@@ -41,6 +42,7 @@ NSString* const kTextCell        = @"TextCell";
 -(UITableViewCell*)buildItemCellForTableView:(UITableView*)tableView withValue:(id)value {
     if ([value isKindOfClass:[CDAAsset class]]) {
         UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kAssetCell];
+        cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, cell.bounds.size.width);
         
@@ -64,6 +66,12 @@ NSString* const kTextCell        = @"TextCell";
             
             [self.thumbnailQueue addOperation:thumbOperation];
         }
+        
+        [cell aspect_hookSelector:@selector(layoutSubviews) withOptions:AspectPositionAfter usingBlock:^{
+            cell.imageView.height -= 2.0;
+            cell.imageView.width = tableView.width - 10.0;
+            cell.imageView.x = 5.0;
+        } error:nil];
         
         [cell setNeedsLayout];
         return cell;
@@ -290,7 +298,7 @@ NSString* const kTextCell        = @"TextCell";
                 return asset.size.height;
             }
             
-            return (tableView.width - 20.0) / asset.size.width * asset.size.height;
+            return (tableView.width / asset.size.width) * asset.size.height;
         }
         
         return tableView.width * 1.25;
