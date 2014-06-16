@@ -107,11 +107,7 @@
                                       self.scrollView.contentSize = CGSizeMake(self.scrollView.width * pages.count,
                                                                                self.scrollView.height);
                                   } failure:^(CDAResponse *response, NSError *error) {
-                                      UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
-                                                                                          message:error.localizedDescription
-                                                                                         delegate:nil
-                                                                                cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                                                otherButtonTitles:nil];
+                                      UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:error.localizedDescription delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
                                       [alertView show];
                                   }];
 }
