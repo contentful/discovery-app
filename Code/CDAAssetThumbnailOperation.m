@@ -6,6 +6,8 @@
 //
 //
 
+#import <ContentfulDeliveryAPI/CDAAsset.h>
+
 #import "CDAAssetPreviewController.h"
 #import "CDAAssetThumbnailOperation.h"
 #import "UIImage+AverageColor.h"
@@ -25,6 +27,46 @@
 #pragma mark -
 
 @implementation CDAAssetThumbnailOperation
+
++(NSDictionary*)fileTypeMap {
+    static dispatch_once_t once;
+    static NSDictionary* fileTypeMap;
+    dispatch_once(&once, ^ {
+        NSData* data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"fileGroups"
+                                                                                      ofType:@"json"]];
+        NSError* error;
+        NSDictionary* map = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        
+        if (!map) {
+            NSLog(@"Error reading fileGroups.json: %@", error);
+            return;
+        }
+        
+        NSMutableDictionary* mutableFileTypeMap = [@{} mutableCopy];
+        
+        [map enumerateKeysAndObjectsUsingBlock:^(NSString* key, NSArray* fileTypes, BOOL *stop) {
+            NSArray* types = [fileTypes valueForKeyPath:@"type"];
+            mutableFileTypeMap[key] = types;
+        }];
+        
+        fileTypeMap = [mutableFileTypeMap copy];
+    });
+    return fileTypeMap;
+}
+
++(NSString*)imageNameForMimeType:(NSString*)mimeType {
+    __block NSString* imageName = @"attachment";
+    
+    [[self fileTypeMap] enumerateKeysAndObjectsUsingBlock:^(NSString* key, NSArray* types, BOOL *stop) {
+        if ([types containsObject:mimeType]) {
+            imageName = key;
+        }
+    }];
+    
+    return imageName;
+}
+
+#pragma mark -
 
 -(void)finish {
     self.previewController = nil;
@@ -65,7 +107,8 @@
 
 -(UIImage *)snapshot {
     if (!_snapshot || [_snapshot isBlack]) {
-        return [UIImage imageNamed:@"document"];
+        UIImage* image = [UIImage imageNamed:[[self class] imageNameForMimeType:self.asset.MIMEType]];
+        return image;
     }
     
     return _snapshot;
