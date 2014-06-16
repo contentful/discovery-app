@@ -61,6 +61,13 @@
     self.pageControl.x = (self.view.width - self.pageControl.width) / 2;
     [self.view addSubview:self.pageControl];
     
+    UIButton* skipButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    skipButton.frame = CGRectMake(0.0, 10.0, 75.0, 50.0);
+    skipButton.x = self.view.width - skipButton.width;
+    [skipButton addTarget:self action:@selector(skipTour) forControlEvents:UIControlEventTouchUpInside];
+    [skipButton setTitle:NSLocalizedString(@"Skip tour", nil) forState:UIControlStateNormal];
+    [self.view addSubview:skipButton];
+    
     [self.client fetchEntryWithIdentifier:@"3dqGz5zXQsK0kmeMCSMgKs"
                                   success:^(CDAResponse *response, CDAEntry *entry) {
                                       CGFloat xCoordinate = 0.0;
@@ -117,6 +124,11 @@
     [self presentMoviePlayerViewControllerAnimated:moviePlayer];
 }
 
+-(void)skipTour {
+    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - UIScrollViewDelegate
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
@@ -124,8 +136,7 @@
     self.pageControl.currentPage = page + 1;
     
     if ([self atEndOfScrollView]) {
-        self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self skipTour];
     }
 }
 
