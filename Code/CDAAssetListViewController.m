@@ -97,6 +97,7 @@
         __weak typeof(CDAAssetThumbnailOperation*) weakOperation = operation;
         operation.completionBlock = ^{
             dispatch_sync(dispatch_get_main_queue(), ^{
+                cell.imageView.contentMode = UIViewContentModeCenter;
                 cell.imageView.image = weakOperation.snapshot;
             });
         };
