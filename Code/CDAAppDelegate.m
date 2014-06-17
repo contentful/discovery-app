@@ -17,9 +17,11 @@
 {
     [UINavigationBar appearance].tintColor = [UIColor colorWithWhite:0.233 alpha:1.000];
     
+    self.spaceSelectionViewController = [CDASpaceSelectionViewController new];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [CDASpaceSelectionViewController new];
+    self.window.rootViewController = self.spaceSelectionViewController;
     [self.window makeKeyAndVisible];
  
     [BBUSplash showAnimated:NO];
@@ -75,6 +77,8 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+    
+    self.spaceSelectionViewController.updatedSavedSpaceAccessInformation = YES;
     return YES;
 }
 

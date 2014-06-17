@@ -13,4 +13,6 @@ extern NSString* const CDASpaceKey;
 
 @interface CDASpaceSelectionViewController : UITableViewController
 
+@property (nonatomic) BOOL updatedSavedSpaceAccessInformation;
+
 @end

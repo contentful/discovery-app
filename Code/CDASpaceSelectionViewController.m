@@ -63,6 +63,12 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
     return self;
 }
 
+- (void)setUpdatedSavedSpaceAccessInformation:(BOOL)updatedSavedSpaceAccessInformation {
+    _updatedSavedSpaceAccessInformation = updatedSavedSpaceAccessInformation;
+    
+    [self applicationDidBecomeActive:nil];
+}
+
 - (void)showSpaceWithKey:(NSString*)spaceKey accessToken:(NSString*)accessToken
 {
     CDAClient* client = [[CDAClient alloc] initWithSpaceKey:spaceKey accessToken:accessToken];
@@ -116,7 +122,11 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 
 - (void)applicationDidBecomeActive:(NSNotification*)notification
 {
-    [self.tableView reloadData];
+    if (self.updatedSavedSpaceAccessInformation) {
+        [self.tableView reloadData];
+        
+        self.updatedSavedSpaceAccessInformation = NO;
+    }
 }
 
 - (void)doneTapped
