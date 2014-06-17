@@ -7,6 +7,7 @@
 //
 
 #import "CDATutorialView.h"
+#import "UIDevice+BBU.h"
 #import "UIView+Geometry.h"
 
 @interface CDATutorialView ()
@@ -28,6 +29,16 @@
         self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
         self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:self.backgroundImageView];
+        
+        switch ([UIDevice bbu_type]) {
+            case BBUDeviceTypePhone:
+            case BBUDeviceTypePhoneRetina:
+                self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+                break;
+                
+            default:
+                break;
+        }
         
         self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.width - 300.0) / 2, 110.0,
                                                                        300.0, 200.0)];
