@@ -88,13 +88,16 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString* title = nil;
     NSString* urlString = nil;
     
     switch (indexPath.row) {
         case 0:
+            title = NSLocalizedString(@"FAQ", nil);
             urlString = @"https://support.contentful.com/hc/en-us/?utm_source=Discovery%20app&utm_medium=iOS&utm_campaign=faq";
             break;
         case 1:
+            title = NSLocalizedString(@"Contact", nil);
             urlString = @"https://support.contentful.com/hc/en-us/requests/new/?utm_source=Discovery%20app&utm_medium=iOS&utm_campaign=feedback";
             break;
         case 2: {
@@ -118,6 +121,7 @@
     
     CDAWebController* webController = [[CDAWebController alloc]
                                        initWithURL:[NSURL URLWithString:urlString]];
+    webController.title = title;
     [self.navigationController pushViewController:webController animated:YES];
 }
 

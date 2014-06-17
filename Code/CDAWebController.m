@@ -15,8 +15,9 @@
     self = [super initWithURL:url];
     if (self) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.hideTopBarAndBottomBarOnScrolling = NO;
         self.mode = TSMiniWebBrowserModeNavigation;
-        self.showPageTitleOnTitleBar = YES;
+        self.showPageTitleOnTitleBar = NO;
         self.showToolBar = NO;
     }
     return self;
