@@ -42,8 +42,9 @@
     UICollectionViewFlowLayout* layout = [UICollectionViewFlowLayout new];
     layout.headerReferenceSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 54.0);
     layout.itemSize = CGSizeMake(100.0, 100.0);
-    layout.minimumInteritemSpacing = 10.0;
+    layout.minimumInteritemSpacing = 5.0;
     layout.minimumLineSpacing = 10.0;
+    layout.sectionInset = UIEdgeInsetsMake(0.0, 5.0, 0.0, 5.0);
     
     self = [super initWithCollectionViewLayout:layout cellMapping:nil];
     if (self) {
