@@ -34,4 +34,11 @@
     return self;
 }
 
+- (void)layoutSubviews
+{
+    self.textField.width = self.width / 2;
+    
+    [super layoutSubviews];
+}
+
 @end
