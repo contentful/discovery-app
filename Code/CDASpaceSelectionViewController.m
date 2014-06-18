@@ -7,6 +7,7 @@
 //
 
 #import <ContentfulDeliveryAPI/ContentfulDeliveryAPI.h>
+#import <DHCShakeNotifier/UIWindow+DHCShakeRecognizer.h>
 
 #import "CDAAboutUsViewController.h"
 #import "CDAHelpViewController.h"
@@ -19,6 +20,7 @@
 NSString* const CDAAccessTokenKey    = @"CDAAccessTokenKey";
 NSString* const CDASpaceKey          = @"CDASpaceKey";
 
+static NSString* const CDADebugMenuCell     = @"DebugMenuCell";
 static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 
 @interface CDASpaceSelectionViewController () <CDAEntriesViewControllerDelegate, UITextFieldDelegate>
@@ -26,6 +28,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 @property (nonatomic, readonly) BOOL done;
 @property (nonatomic) UIButton* loadButton;
 @property (nonatomic) UIImageView* logoView;
+@property (nonatomic) BOOL showsDebugMenu;
 
 @end
 
@@ -35,9 +38,11 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIApplicationDidBecomeActiveNotification
-                                                  object:nil];
+    for (NSString* name in @[ DHCSHakeNotificationName, UIApplicationDidBecomeActiveNotification ]) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:name
+                                                      object:nil];
+    }
 }
 
 - (BOOL)done
@@ -54,10 +59,17 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
         
         [self.tableView registerClass:[CDATextEntryCell class]
                forCellReuseIdentifier:NSStringFromClass([self class])];
+        [self.tableView registerClass:[UITableViewCell class]
+               forCellReuseIdentifier:CDADebugMenuCell];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(applicationDidBecomeActive:)
                                                      name:UIApplicationDidBecomeActiveNotification
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(shakeHappened:)
+                                                     name:DHCSHakeNotificationName
                                                    object:nil];
     }
     return self;
@@ -161,6 +173,15 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
     [self presentViewController:navController animated:YES completion:nil];
 }
 
+- (void)shakeHappened:(NSNotification*)note
+{
+#ifdef DEBUG
+    self.showsDebugMenu = !self.showsDebugMenu;
+    
+    [self.tableView reloadData];
+#endif
+}
+
 - (void)showHelp
 {
     CDAHelpViewController* help = [CDAHelpViewController new];
@@ -199,11 +220,40 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return self.showsDebugMenu ? 1 : 2;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.showsDebugMenu) {
+        UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CDADebugMenuCell
+                                                                forIndexPath:indexPath];
+        
+        switch (indexPath.row) {
+            case 0:
+                cell.textLabel.text = @"Ancient Myths";
+                break;
+                
+            case 1:
+                cell.textLabel.text = @"Asset testing";
+                break;
+            
+            case 2:
+                cell.textLabel.text = @"Browser app test";
+                break;
+                
+            case 3:
+                cell.textLabel.text = @"Case study";
+                break;
+                
+            case 4:
+                cell.textLabel.text = @"Seed database test";
+                break;
+        }
+        
+        return cell;
+    }
+    
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     CDATextEntryCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([self class])
@@ -236,27 +286,39 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
+    if (self.showsDebugMenu) {
+        return 0.0;
+    }
+    
     return section == 1 ? 118.0 : UITableViewAutomaticDimension;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (self.showsDebugMenu) {
+        return 0.0;
+    }
+    
     CGFloat topHeight = 220.0 + ([UIScreen mainScreen].bounds.size.height - 480.0);
     return section == 0 ? topHeight : UITableViewAutomaticDimension;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (self.showsDebugMenu) {
+        return 5;
+    }
+    
     return section == 0 ? 0 : 2;
 }
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return NSLocalizedString(@"Enter access information", nil);
+    return self.showsDebugMenu ? nil : NSLocalizedString(@"Enter access information", nil);
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    if (section == 0) {
+    if (section == 0 || self.showsDebugMenu) {
         return nil;
     }
     
@@ -294,7 +356,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
+    if (section == 0 && !self.showsDebugMenu) {
         UIView* containerView = [[UIView alloc] initWithFrame:CGRectZero];
         
         self.logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
@@ -323,6 +385,37 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.showsDebugMenu) {
+        switch (indexPath.row) {
+            case 0:
+                [self showSpaceWithKey:@"nvyqx9l6z9z9"
+                           accessToken:@"af972a4929249ff278fa09828a4f6d4580ff6cba1d0ca1ef12c0c9afda2fe57e"];
+                break;
+                
+            case 1:
+                [self showSpaceWithKey:@"gfldmthn9ms1"
+                           accessToken:@"2cb1dae8fa4849ed58075769441d81a39c19e2cdbc6126a1f096d1c4e1823cc3"];
+                break;
+                
+            case 2:
+                [self showSpaceWithKey:@"xob0ttmty67c"
+                           accessToken:@"ccc4d04e8f85c5e86925587c2f9ec2c32651c7f0c8e4e641bb70dac9ad71f35c"];
+                break;
+                
+            case 3:
+                [self showSpaceWithKey:@"zdd82vwiz91m"
+                           accessToken:@"79ba4c76a2813d9322b3c068bb61dfb00120b9a5453001682c3ad2b152d0bef2"];
+                break;
+                
+            case 4:
+                [self showSpaceWithKey:@"duzidfp33ikw"
+                           accessToken:@"a196a5806ddd5f25700624bb11dfc94aeac9f0a5d4bd245e68cf42f78f8b2cc6"];
+                break;
+        }
+        
+        return;
+    }
+    
     [[self textFieldAtRow:indexPath.row] becomeFirstResponder];
 }
 

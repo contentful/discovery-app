@@ -9,6 +9,7 @@ pod 'CGLMail'
 pod 'ContentfulDeliveryAPI'
 pod 'CSStickyHeaderFlowLayout'
 pod 'DDPageControl'
+pod 'DHCShakeNotifier'
 pod 'TSMiniWebBrowser@dblock', :inhibit_warnings => true
 pod 'UITableView-NXEmptyView', :inhibit_warnings => true
 

@@ -30,6 +30,7 @@ PODS:
     - ISO8601DateFormatter
   - CSStickyHeaderFlowLayout (0.2)
   - DDPageControl (0.1)
+  - DHCShakeNotifier (0.2.0)
   - HRCoder (1.3.1)
   - ISO8601DateFormatter (0.7)
   - TSMiniWebBrowser@dblock (1.1)
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - ContentfulDeliveryAPI
   - CSStickyHeaderFlowLayout
   - DDPageControl
+  - DHCShakeNotifier
   - TSMiniWebBrowser@dblock
   - UITableView-NXEmptyView
 
@@ -55,6 +57,7 @@ SPEC CHECKSUMS:
   ContentfulDeliveryAPI: 3fda92dc0574251e1f0051154686e32095e49b96
   CSStickyHeaderFlowLayout: b6530bc5f95d656b6963ddb6dd692c0f61890a98
   DDPageControl: 86d07bda58e325a427fb0d7c8fb650add2ff35c2
+  DHCShakeNotifier: d5e1130243096e9488e0ecce8e6e268647357b4b
   HRCoder: 0952826ddf4213a11be775d01446f61a5df987a4
   ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
   TSMiniWebBrowser@dblock: 4e73ee955fcf2e9f5d98f7a17460454ac059bc37
