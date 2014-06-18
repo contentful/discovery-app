@@ -56,12 +56,8 @@ extern NSString* CDACacheFileNameForResource(CDAResource* resource);
 @implementation CDAAssetPreviewController
 
 +(BOOL)shouldHandleAsset:(CDAAsset*)asset {
-    // Limit to files < 1MB
-    if ([asset.fields[@"file"][@"details"][@"size"] integerValue] > 1000000) {
-        return NO;
-    }
-    
-    return YES;
+    // Asset previews do not work reliably at the moment, so...
+    return NO;
 }
 
 #pragma mark -

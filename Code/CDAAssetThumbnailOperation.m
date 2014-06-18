@@ -11,7 +11,6 @@
 #import "CDAAssetPreviewController.h"
 #import "CDAAssetThumbnailOperation.h"
 #import "UIImage+AverageColor.h"
-#import "UIImage+Scaling.h"
 
 @interface CDAAssetThumbnailOperation () <CDAAssetPreviewControllerDelegate> {
     BOOL _isExecuting;
@@ -110,11 +109,6 @@
     if (!_snapshot || [_snapshot isBlack]) {
         NSString* imageName = [[self class] imageNameForMimeType:self.asset.MIMEType];
         UIImage* image = [UIImage imageNamed:imageName];
-        
-        CGFloat scale = [UIScreen mainScreen].scale;
-        image = [UIImage cda_imageWithImage:image scaledToSize:CGSizeMake(40.0 * scale, 40.0 * scale)];
-        image = [UIImage imageWithCGImage:image.CGImage scale:scale orientation:image.imageOrientation];
-        
         return image;
     }
     
@@ -136,7 +130,11 @@
     [self didChangeValueForKey:@"isExecuting"];
     
     if (![CDAAssetPreviewController shouldHandleAsset:self.asset]) {
-        [self finish];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self finish];
+        });
+        
+        return;
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{

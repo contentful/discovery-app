@@ -12,6 +12,7 @@
 #import "CDAAssetListViewController.h"
 #import "CDAAssetThumbnailOperation.h"
 #import "UIApplication+Browser.h"
+#import "UIImage+Scaling.h"
 
 #define CDADocumentThumbnailSize        CGSizeMake(100.0 * [UIScreen mainScreen].scale, \
                                                    100.0 * [UIScreen mainScreen].scale)
@@ -68,6 +69,10 @@
     CDAResourceCell* cell = (CDAResourceCell*)[super collectionView:collectionView
                                              cellForItemAtIndexPath:indexPath];
     
+    cell.imageView.highlighted = NO;
+    cell.imageView.highlightedImage = nil;
+    cell.imageView.image = nil;
+    
     if (asset.isImage) {
         CGFloat height = ceilf(CDADocumentThumbnailSize.width / asset.size.width * asset.size.height);
         NSURL* imageURL = [asset imageURLWithSize:CGSizeMake(CDADocumentThumbnailSize.width, height)
@@ -98,7 +103,12 @@
         operation.completionBlock = ^{
             dispatch_sync(dispatch_get_main_queue(), ^{
                 cell.imageView.contentMode = UIViewContentModeCenter;
+                cell.imageView.highlighted = YES;
                 cell.imageView.image = weakOperation.snapshot;
+                
+                CGFloat scale = [UIScreen mainScreen].scale;
+                cell.imageView.highlightedImage = [UIImage cda_imageWithImage:cell.imageView.image scaledToSize:CGSizeMake(40.0 * scale, 40.0 * scale)];
+                cell.imageView.highlightedImage = [UIImage imageWithCGImage:cell.imageView.highlightedImage.CGImage scale:scale orientation:cell.imageView.highlightedImage.imageOrientation];
             });
         };
         
