@@ -88,6 +88,7 @@
 		A1D3956C194A5B8F0083D8E2 /* UITableView+EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D3956B194A5B8F0083D8E2 /* UITableView+EmptyView.m */; };
 		A1D6E73B1949024000725E4F /* CDAWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E73A1949024000725E4F /* CDAWebController.m */; };
 		A1DC2DD2194FBC2B00CD0060 /* UIImage+Scaling.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2DD1194FBC2B00CD0060 /* UIImage+Scaling.m */; };
+		A1DC5C7319532DA80017B6B1 /* UIColor+Contentful.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC5C7219532DA80017B6B1 /* UIColor+Contentful.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -204,6 +205,8 @@
 		A1D6E73A1949024000725E4F /* CDAWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDAWebController.m; path = Code/CDAWebController.m; sourceTree = SOURCE_ROOT; };
 		A1DC2DD0194FBC2B00CD0060 /* UIImage+Scaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scaling.h"; sourceTree = "<group>"; };
 		A1DC2DD1194FBC2B00CD0060 /* UIImage+Scaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scaling.m"; sourceTree = "<group>"; };
+		A1DC5C7119532DA80017B6B1 /* UIColor+Contentful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Contentful.h"; sourceTree = "<group>"; };
+		A1DC5C7219532DA80017B6B1 /* UIColor+Contentful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Contentful.m"; sourceTree = "<group>"; };
 		E187785852B64298B4B6751B /* libPods-Discovery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Discovery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -365,6 +368,8 @@
 			children = (
 				A1279D481948597C00EC6B05 /* UIApplication+Browser.h */,
 				A1279D491948597C00EC6B05 /* UIApplication+Browser.m */,
+				A1DC5C7119532DA80017B6B1 /* UIColor+Contentful.h */,
+				A1DC5C7219532DA80017B6B1 /* UIColor+Contentful.m */,
 				A1279D99194895E000EC6B05 /* UIDevice+BBU.h */,
 				A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */,
 				A1279D4A1948597C00EC6B05 /* UIImage+AverageColor.h */,
@@ -615,6 +620,7 @@
 				A1279D501948597C00EC6B05 /* CDAAboutUsViewController.m in Sources */,
 				A1279D5F1948597C00EC6B05 /* CDAPrimitiveCell.m in Sources */,
 				A1279D611948597C00EC6B05 /* CDASpaceViewController.m in Sources */,
+				A1DC5C7319532DA80017B6B1 /* UIColor+Contentful.m in Sources */,
 				A1279D571948597C00EC6B05 /* CDABasicCell.m in Sources */,
 				A1279D9B194895E000EC6B05 /* UIDevice+BBU.m in Sources */,
 				A1DC2DD2194FBC2B00CD0060 /* UIImage+Scaling.m in Sources */,
