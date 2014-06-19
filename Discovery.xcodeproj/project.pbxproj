@@ -89,6 +89,7 @@
 		A1D6E73B1949024000725E4F /* CDAWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E73A1949024000725E4F /* CDAWebController.m */; };
 		A1DC2DD2194FBC2B00CD0060 /* UIImage+Scaling.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2DD1194FBC2B00CD0060 /* UIImage+Scaling.m */; };
 		A1DC5C7319532DA80017B6B1 /* UIColor+Contentful.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC5C7219532DA80017B6B1 /* UIColor+Contentful.m */; };
+		A1DC5C77195332900017B6B1 /* UIFont+Contentful.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC5C76195332900017B6B1 /* UIFont+Contentful.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -207,6 +208,8 @@
 		A1DC2DD1194FBC2B00CD0060 /* UIImage+Scaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scaling.m"; sourceTree = "<group>"; };
 		A1DC5C7119532DA80017B6B1 /* UIColor+Contentful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Contentful.h"; sourceTree = "<group>"; };
 		A1DC5C7219532DA80017B6B1 /* UIColor+Contentful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Contentful.m"; sourceTree = "<group>"; };
+		A1DC5C75195332900017B6B1 /* UIFont+Contentful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Contentful.h"; sourceTree = "<group>"; };
+		A1DC5C76195332900017B6B1 /* UIFont+Contentful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Contentful.m"; sourceTree = "<group>"; };
 		E187785852B64298B4B6751B /* libPods-Discovery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Discovery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -372,6 +375,8 @@
 				A1DC5C7219532DA80017B6B1 /* UIColor+Contentful.m */,
 				A1279D99194895E000EC6B05 /* UIDevice+BBU.h */,
 				A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */,
+				A1DC5C75195332900017B6B1 /* UIFont+Contentful.h */,
+				A1DC5C76195332900017B6B1 /* UIFont+Contentful.m */,
 				A1279D4A1948597C00EC6B05 /* UIImage+AverageColor.h */,
 				A1279D4B1948597C00EC6B05 /* UIImage+AverageColor.m */,
 				A1DC2DD0194FBC2B00CD0060 /* UIImage+Scaling.h */,
@@ -627,6 +632,7 @@
 				A1279D5E1948597C00EC6B05 /* CDAMarkdownCell.mm in Sources */,
 				A1279D631948597C00EC6B05 /* CDATutorialController.m in Sources */,
 				A1279D541948597C00EC6B05 /* CDAAssetPreviewCell.m in Sources */,
+				A1DC5C77195332900017B6B1 /* UIFont+Contentful.m in Sources */,
 				A1279D531948597C00EC6B05 /* CDAAssetListViewController.m in Sources */,
 				A1279D561948597C00EC6B05 /* CDAAssetThumbnailOperation.m in Sources */,
 				A1279D621948597C00EC6B05 /* CDATextEntryCell.m in Sources */,
