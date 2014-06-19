@@ -249,6 +249,9 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
             case 4:
                 cell.textLabel.text = @"Seed database test";
                 break;
+            case 5:
+                cell.textLabel.text = @"Music Demo Publishing";
+                break;
         }
         
         return cell;
@@ -305,7 +308,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (self.showsDebugMenu) {
-        return 5;
+        return 6;
     }
     
     return section == 0 ? 0 : 2;
@@ -410,6 +413,11 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
             case 4:
                 [self showSpaceWithKey:@"duzidfp33ikw"
                            accessToken:@"a196a5806ddd5f25700624bb11dfc94aeac9f0a5d4bd245e68cf42f78f8b2cc6"];
+                break;
+                
+            case 5:
+                [self showSpaceWithKey:@"ntaqqv7rma1o"
+                           accessToken:@"750704407ecefb218f1e0af2d799053413abd773f402d447bfc066b6292fb480"];
                 break;
         }
         
