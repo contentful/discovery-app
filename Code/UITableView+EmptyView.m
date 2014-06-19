@@ -10,6 +10,7 @@
 
 #import <Aspects/Aspects.h>
 
+#import "UIColor+Contentful.h"
 #import "UITableView+EmptyView.h"
 #import "UIView+Geometry.h"
 
@@ -33,7 +34,7 @@ static const char* CDALoadingKey = "CDALoadingKey";
                                                  initWithFrame:CGRectZero];
     loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
     loadingIndicator.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    loadingIndicator.color = [UIColor blackColor];
+    loadingIndicator.color = [UIColor contentfulBlackColor];
     [loadingIndicator startAnimating];
     
     UIView* emptyView = [[UIView alloc] initWithFrame:CGRectZero];

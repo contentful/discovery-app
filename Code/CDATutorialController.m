@@ -13,6 +13,7 @@
 
 #import "CDATutorialController.h"
 #import "CDATutorialView.h"
+#import "UIColor+Contentful.h"
 #import "UIDevice+BBU.h"
 #import "UIView+Geometry.h"
 
@@ -55,7 +56,7 @@
     [self.view addSubview:self.scrollView];
     
     self.pageControl = [DDPageControl new];
-    self.pageControl.onColor = [UIColor blackColor];
+    self.pageControl.onColor = [UIColor contentfulBlackColor];
     self.pageControl.offColor = [UIColor lightGrayColor];
     self.pageControl.frame = CGRectMake(0.0, self.view.height - 50.0, 100.0, 50.0);
     self.pageControl.x = (self.view.width - self.pageControl.width) / 2;

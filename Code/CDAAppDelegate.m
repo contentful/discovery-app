@@ -10,12 +10,16 @@
 #import "CDAAppDelegate.h"
 #import "CDASpaceSelectionViewController.h"
 #import "CDATutorialController.h"
+#import "UIColor+Contentful.h"
 
 @implementation CDAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [UINavigationBar appearance].tintColor = [UIColor colorWithWhite:0.233 alpha:1.000];
+    [UIButton appearance].tintColor = [UIColor contentfulBlueColor];
+    [UINavigationBar appearance].tintColor = [UIColor contentfulBlackColor];
+    [UISegmentedControl appearance].tintColor = [UIColor contentfulBlueColor];
+    [UITabBar appearance].tintColor = [UIColor contentfulBlueColor];
     
     self.spaceSelectionViewController = [CDASpaceSelectionViewController new];
     

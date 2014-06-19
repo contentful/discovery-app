@@ -7,6 +7,7 @@
 //
 
 #import "CDABasicCell.h"
+#import "UIColor+Contentful.h"
 #import "UIView+Geometry.h"
 
 @interface CDABasicCell ()
@@ -51,7 +52,7 @@
                                            reuseIdentifier:nil];
         self.cell.backgroundColor = [UIColor whiteColor];
         self.cell.frame = self.bounds;
-        self.cell.textLabel.textColor = [UIColor blackColor];
+        self.cell.textLabel.textColor = [UIColor contentfulBlackColor];
         self.cell.userInteractionEnabled = NO;
         [self addSubview:self.cell];
         
