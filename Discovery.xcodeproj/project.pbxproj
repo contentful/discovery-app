@@ -265,19 +265,12 @@
 				A1279D8E19485A1B00EC6B05 /* Categories */,
 				A1279D8F19485B0500EC6B05 /* Content Types */,
 				A1279D8C194859B700EC6B05 /* Entries */,
+				A1DC5C78195337780017B6B1 /* Information */,
 				A1279D8D194859CB00EC6B05 /* Spaces */,
 				A1279D961948958C00EC6B05 /* BBUSplash.h */,
 				A1279D971948958C00EC6B05 /* BBUSplash.m */,
-				A1279D1E1948597C00EC6B05 /* CDAAboutUsViewController.h */,
-				A1279D1F1948597C00EC6B05 /* CDAAboutUsViewController.m */,
 				A1279D201948597C00EC6B05 /* CDAAppDelegate.h */,
 				A1279D211948597C00EC6B05 /* CDAAppDelegate.m */,
-				A1279D361948597C00EC6B05 /* CDAHelpViewController.h */,
-				A1279D371948597C00EC6B05 /* CDAHelpViewController.m */,
-				A1279D441948597C00EC6B05 /* CDATutorialController.h */,
-				A1279D451948597C00EC6B05 /* CDATutorialController.m */,
-				A1279D461948597C00EC6B05 /* CDATutorialView.h */,
-				A1279D471948597C00EC6B05 /* CDATutorialView.m */,
 				A1D6E7391949024000725E4F /* CDAWebController.h */,
 				A1D6E73A1949024000725E4F /* CDAWebController.m */,
 			);
@@ -455,6 +448,21 @@
 				A1279D711948598E00EC6B05 /* logout@2x.png */,
 			);
 			name = Buttons;
+			sourceTree = "<group>";
+		};
+		A1DC5C78195337780017B6B1 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				A1279D1E1948597C00EC6B05 /* CDAAboutUsViewController.h */,
+				A1279D1F1948597C00EC6B05 /* CDAAboutUsViewController.m */,
+				A1279D361948597C00EC6B05 /* CDAHelpViewController.h */,
+				A1279D371948597C00EC6B05 /* CDAHelpViewController.m */,
+				A1279D441948597C00EC6B05 /* CDATutorialController.h */,
+				A1279D451948597C00EC6B05 /* CDATutorialController.m */,
+				A1279D461948597C00EC6B05 /* CDATutorialView.h */,
+				A1279D471948597C00EC6B05 /* CDATutorialView.m */,
+			);
+			name = Information;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
