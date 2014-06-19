@@ -40,9 +40,8 @@
                 break;
         }
         
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.width - 300.0) / 2, 110.0,
-                                                                       300.0, 200.0)];
-        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 110.0, 320.0, 240.0)];
+        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self addSubview:self.imageView];
         
         self.headline = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 50.0, self.width, 50.0)];
