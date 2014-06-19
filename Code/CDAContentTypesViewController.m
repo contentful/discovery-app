@@ -40,9 +40,14 @@
     entriesVC.navigationItem.rightBarButtonItem = self.logoutButton;
     entriesVC.query = @{ @"content_type": contentType.identifier };
     entriesVC.showSearchBar = YES;
+    entriesVC.tableView.loading_cda = YES;
     entriesVC.title = contentType.name;
     
-    [entriesVC.tableView cda_onEmptynessShowLabelWithTitle:NSLocalizedString(@"No matching entries found.", nil)];
+    [entriesVC.tableView cda_onEmptynessShowLabelWithTitle:NSLocalizedString(@"No matching entries found.", nil) beforeBlock:^{
+        if (entriesVC.items) {
+            entriesVC.tableView.loading_cda = NO;
+        }
+    }];
     
     [self.navigationController pushViewController:entriesVC animated:YES];
 }

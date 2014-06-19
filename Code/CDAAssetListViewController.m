@@ -129,11 +129,7 @@
         [self.collectionView addSubview:emptynessLabel];
         
         self.emptyView = emptynessLabel;
-        
-        self.emptyView.alpha = 0.0;
-        [UIView animateWithDuration:0.5 animations:^{
-            self.emptyView.alpha = 1.0;
-        }];
+        self.emptyView.hidden = self.items == nil;
     } else {
         [self.emptyView removeFromSuperview];
         self.emptyView = nil;

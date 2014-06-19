@@ -38,7 +38,7 @@
         self.tableView.dataSource = self.dataSource;
         self.tableView.delegate = self.dataSource;
         
-        [self.tableView cda_onEmptynessShowLabelWithTitle:NSLocalizedString(@"Entry has no content.", nil)];
+        [self.tableView cda_onEmptynessShowLabelWithTitle:NSLocalizedString(@"Entry has no content.", nil) beforeBlock:nil];
         
         [self.tableView registerClass:[CDAAssetPreviewCell class] forCellReuseIdentifier:kAssetCell];
         [self.tableView registerClass:NSClassFromString(@"CDAResourceTableViewCell")

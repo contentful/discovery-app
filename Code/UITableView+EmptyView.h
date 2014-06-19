@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UITableView-NXEmptyView/UITableView+NXEmptyView.h>
 
 @interface UITableView (EmptyView)
 
--(void)cda_onEmptynessShowLabelWithTitle:(NSString*)title;
+@property (nonatomic) BOOL loading_cda;
+
+-(void)cda_onEmptynessShowLabelWithTitle:(NSString*)title beforeBlock:(void (^)())before;
 
 @end
