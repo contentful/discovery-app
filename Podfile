@@ -14,5 +14,8 @@ pod 'OpenSans'
 pod 'TSMiniWebBrowser@dblock', :inhibit_warnings => true
 pod 'UITableView-NXEmptyView', :inhibit_warnings => true
 
+## For testing only
+#pod 'Reveal-iOS-SDK'
+
 end
 
