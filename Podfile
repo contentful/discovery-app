@@ -6,7 +6,7 @@ pod 'AnimatedGIFImageSerialization'
 pod 'Aspects'
 pod 'Bypass', :inhibit_warnings => true
 pod 'CGLMail'
-pod 'ContentfulDeliveryAPI'
+pod 'ContentfulDeliveryAPI', :head
 pod 'CSStickyHeaderFlowLayout'
 pod 'DDPageControl'
 pod 'DHCShakeNotifier'
