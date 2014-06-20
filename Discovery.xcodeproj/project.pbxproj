@@ -304,15 +304,11 @@
 			isa = PBXGroup;
 			children = (
 				A1D13510194F2E610060C842 /* Buttons */,
+				A16742821954BC36007966EF /* Company */,
 				A1D1350E194F2E010060C842 /* Document icons */,
 				A1D1350F194F2E310060C842 /* Tab bar icons */,
-				A1279D921948863700EC6B05 /* contentful-video.mp4 */,
 				A1D134E0194F19EA0060C842 /* fileGroups.json */,
 				A1279D001948555700EC6B05 /* Images.xcassets */,
-				A1D134ED194F2D600060C842 /* logo.png */,
-				A1DC5C7D195338AB0017B6B1 /* logo~ipad.png */,
-				A1279D701948598E00EC6B05 /* logo@2x.png */,
-				A1DC5C7E195338AB0017B6B1 /* logo@2x~ipad.png */,
 				A1D134EF194F2D600060C842 /* map.png */,
 				A1279D721948598E00EC6B05 /* map@2x.png */,
 				A1D134F2194F2D600060C842 /* pin.png */,
@@ -403,6 +399,18 @@
 				A1279D2F1948597C00EC6B05 /* CDAContentTypesViewController.m */,
 			);
 			name = "Content Types";
+			sourceTree = "<group>";
+		};
+		A16742821954BC36007966EF /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				A1279D921948863700EC6B05 /* contentful-video.mp4 */,
+				A1D134ED194F2D600060C842 /* logo.png */,
+				A1DC5C7D195338AB0017B6B1 /* logo~ipad.png */,
+				A1279D701948598E00EC6B05 /* logo@2x.png */,
+				A1DC5C7E195338AB0017B6B1 /* logo@2x~ipad.png */,
+			);
+			name = Company;
 			sourceTree = "<group>";
 		};
 		A1D1350E194F2E010060C842 /* Document icons */ = {
