@@ -14,7 +14,6 @@
 #import "CDAAssetPreviewController.h"
 #import "CDABasicCell.h"
 #import "CDAHeaderView.h"
-#import "UIColor+Contentful.h"
 
 @interface CDAAssetDetailsViewController ()
 
@@ -113,7 +112,7 @@
     
     if ([key isEqualToString:@"fields.title"]) {
         cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:16.0];
-        cell.detailTextLabel.textColor = [UIColor contentfulBlackColor];
+        cell.detailTextLabel.textColor = [UIColor blackColor];
     }
     
     if ([@[ @"fields.description", @"fields.title" ] containsObject:key]) {
