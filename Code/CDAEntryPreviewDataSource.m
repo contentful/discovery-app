@@ -283,7 +283,7 @@ NSString* const kTextCell        = @"TextCell";
         return [(NSString*)value boundingRectWithSize:CGSizeMake(tableView.width, INT_MAX)
                                               options:NSStringDrawingUsesLineFragmentOrigin
                                            attributes:@{ NSFontAttributeName: [CDAMarkdownCell usedFont] }
-                                              context:nil].size.height;
+                                              context:nil].size.height + 40.0;
     }
     
     if (field.type == CDAFieldTypeLocation) {

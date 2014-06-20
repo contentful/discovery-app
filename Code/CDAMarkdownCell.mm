@@ -32,6 +32,7 @@
     if (self) {
         self.textView = [[UITextView alloc] initWithFrame:self.bounds];
         self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.textView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 20.0, 0.0);
         self.textView.editable = NO;
         self.textView.font = [[self class] usedFont];
         if ([self.textView respondsToSelector:@selector(textContainerInset)]) {
@@ -57,6 +58,7 @@
     NSAttributedString* attributedText = [converter convertDocument:document];
     
     self.textView.attributedText = attributedText;
+    self.textView.scrollEnabled = NO;
 }
 
 @end
