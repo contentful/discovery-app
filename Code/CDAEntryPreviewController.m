@@ -85,7 +85,10 @@
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section != 0) {
-        return nil;
+        UITableViewHeaderFooterView* headerView = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:NSStringFromClass([self class])];
+        headerView.backgroundView.backgroundColor = [UIColor whiteColor];
+        headerView.contentView.backgroundColor = [UIColor whiteColor];
+        return headerView;
     }
     
     UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.width, 60.0)];
