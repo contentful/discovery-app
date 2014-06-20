@@ -37,6 +37,7 @@
         
         self.tableView.dataSource = self.dataSource;
         self.tableView.delegate = self.dataSource;
+        self.tableView.separatorColor = [UIColor whiteColor];
         
         [self.tableView cda_onEmptynessShowLabelWithTitle:NSLocalizedString(@"Entry has no content.", nil) beforeBlock:nil];
         
@@ -59,9 +60,11 @@
     if (segmentedControl.selectedSegmentIndex == 1) {
         self.tableView.dataSource = self.dataSource;
         self.tableView.delegate = self.dataSource;
+        self.tableView.separatorColor = [UIColor whiteColor];
     } else {
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
+        self.tableView.separatorColor = [UIColor grayColor];
     }
     
     [self.tableView reloadData];
