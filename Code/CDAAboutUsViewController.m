@@ -9,6 +9,7 @@
 #import <CGLMail/CGLMailHelper.h>
 
 #import "CDAAboutUsViewController.h"
+#import "CDALicensingViewController.h"
 #import "CDATutorialController.h"
 #import "CDAWebController.h"
 #import "UIView+Geometry.h"
@@ -72,13 +73,16 @@
         case 3:
             cell.textLabel.text = NSLocalizedString(@"View Tour", nil);
             break;
+        case 4:
+            cell.textLabel.text = NSLocalizedString(@"Licensing information", nil);
+            break;
     }
     
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 5;
 }
 
 #pragma mark - UITableViewDelegate
@@ -115,6 +119,11 @@
         case 3: {
             CDATutorialController* tutorial = [CDATutorialController new];
             [self presentViewController:tutorial animated:YES completion:nil];
+            return;
+        }
+        case 4: {
+            CDALicensingViewController* licenses = [CDALicensingViewController new];
+            [self.navigationController pushViewController:licenses animated:YES];
             return;
         }
     }

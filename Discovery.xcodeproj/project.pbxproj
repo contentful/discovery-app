@@ -59,6 +59,8 @@
 		A1279D951948863700EC6B05 /* contentful-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1279D921948863700EC6B05 /* contentful-video.mp4 */; };
 		A1279D981948958C00EC6B05 /* BBUSplash.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D971948958C00EC6B05 /* BBUSplash.m */; };
 		A1279D9B194895E000EC6B05 /* UIDevice+BBU.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */; };
+		A16742841954BC64007966EF /* Pods-Discovery-acknowledgements.markdown in Resources */ = {isa = PBXBuildFile; fileRef = A16742831954BC64007966EF /* Pods-Discovery-acknowledgements.markdown */; };
+		A16A2C0D1954B97300AB4783 /* CDALicensingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A16A2C0C1954B97300AB4783 /* CDALicensingViewController.m */; };
 		A17D37CF194EE50600B39213 /* attachment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A17D37CC194EE50600B39213 /* attachment@2x.png */; };
 		A17D37D0194EE50600B39213 /* code@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A17D37CD194EE50600B39213 /* code@2x.png */; };
 		A17D37D1194EE50600B39213 /* markup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A17D37CE194EE50600B39213 /* markup@2x.png */; };
@@ -177,6 +179,9 @@
 		A1279D971948958C00EC6B05 /* BBUSplash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBUSplash.m; path = Code/BBUSplash.m; sourceTree = SOURCE_ROOT; };
 		A1279D99194895E000EC6B05 /* UIDevice+BBU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+BBU.h"; path = "Code/UIDevice+BBU.h"; sourceTree = SOURCE_ROOT; };
 		A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+BBU.m"; path = "Code/UIDevice+BBU.m"; sourceTree = SOURCE_ROOT; };
+		A16742831954BC64007966EF /* Pods-Discovery-acknowledgements.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Pods-Discovery-acknowledgements.markdown"; path = "Pods/Pods-Discovery-acknowledgements.markdown"; sourceTree = SOURCE_ROOT; };
+		A16A2C0B1954B97300AB4783 /* CDALicensingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDALicensingViewController.h; sourceTree = "<group>"; };
+		A16A2C0C1954B97300AB4783 /* CDALicensingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDALicensingViewController.m; sourceTree = "<group>"; };
 		A17D37CC194EE50600B39213 /* attachment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "attachment@2x.png"; sourceTree = "<group>"; };
 		A17D37CD194EE50600B39213 /* code@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "code@2x.png"; sourceTree = "<group>"; };
 		A17D37CE194EE50600B39213 /* markup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "markup@2x.png"; sourceTree = "<group>"; };
@@ -312,6 +317,7 @@
 				A1279D721948598E00EC6B05 /* map@2x.png */,
 				A1D134F2194F2D600060C842 /* pin.png */,
 				A1279D751948598E00EC6B05 /* pin@2x.png */,
+				A16742831954BC64007966EF /* Pods-Discovery-acknowledgements.markdown */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -466,6 +472,8 @@
 				A1279D1F1948597C00EC6B05 /* CDAAboutUsViewController.m */,
 				A1279D361948597C00EC6B05 /* CDAHelpViewController.h */,
 				A1279D371948597C00EC6B05 /* CDAHelpViewController.m */,
+				A16A2C0B1954B97300AB4783 /* CDALicensingViewController.h */,
+				A16A2C0C1954B97300AB4783 /* CDALicensingViewController.m */,
 				A1279D441948597C00EC6B05 /* CDATutorialController.h */,
 				A1279D451948597C00EC6B05 /* CDATutorialController.m */,
 				A1279D461948597C00EC6B05 /* CDATutorialView.h */,
@@ -529,6 +537,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A16742841954BC64007966EF /* Pods-Discovery-acknowledgements.markdown in Resources */,
 				A1279D881948598E00EC6B05 /* video@2x.png in Resources */,
 				A1D1350B194F2D600060C842 /* archive.png in Resources */,
 				A1279D871948598E00EC6B05 /* presentation@2x.png in Resources */,
@@ -667,6 +676,7 @@
 				A1279D5C1948597C00EC6B05 /* CDAHelpViewController.m in Sources */,
 				A1279D651948597C00EC6B05 /* UIApplication+Browser.m in Sources */,
 				A1279D5B1948597C00EC6B05 /* CDAHeaderView.m in Sources */,
+				A16A2C0D1954B97300AB4783 /* CDALicensingViewController.m in Sources */,
 				A1D6E73B1949024000725E4F /* CDAWebController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
