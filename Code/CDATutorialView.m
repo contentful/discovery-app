@@ -44,6 +44,10 @@
         self.imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self addSubview:self.imageView];
         
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            self.imageView.size = CGSizeMake(768.0, 700.0);
+        }
+        
         self.headline = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 50.0, self.width, 50.0)];
         self.headline.font = [UIFont boldSystemFontOfSize:20.0];
         self.headline.textAlignment = NSTextAlignmentCenter;

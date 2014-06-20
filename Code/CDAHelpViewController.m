@@ -34,6 +34,7 @@
     
     UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0,
                                                                            scrollView.width, 0.0)];
+    imageView.clipsToBounds = YES;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.y = CGRectGetMaxY(explanatoryText.frame) + 20.0;
     [scrollView addSubview:imageView];

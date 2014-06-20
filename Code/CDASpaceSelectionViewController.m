@@ -364,7 +364,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
         
         self.logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
         self.logoView.contentMode = UIViewContentModeScaleAspectFit;
-        self.logoView.frame = CGRectMake(0.0, 40.0, tableView.width, 200.0);
+        self.logoView.frame = CGRectMake(0.0, 40.0, tableView.width, UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 420 : 200.0);
         self.logoView.userInteractionEnabled = YES;
         [containerView addSubview:self.logoView];
         

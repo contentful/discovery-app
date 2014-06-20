@@ -88,13 +88,13 @@
                                               case BBUDeviceTypePad:
                                               case BBUDeviceTypePadRetina:
                                                   [tutorialView.backgroundImageView cda_setImageWithAsset:entry.fields[@"backgroundImageIPad"]];
+                                                  [tutorialView.imageView cda_setImageWithAsset:page.fields[@"assetiPad"]];
                                                   break;
                                               default:
                                                   [tutorialView.backgroundImageView cda_setImageWithAsset:entry.fields[@"backgroundImage"]];
+                                                  [tutorialView.imageView cda_setImageWithAsset:page.fields[@"asset"]];
                                                   break;
                                           }
-                                          
-                                          [tutorialView.imageView cda_setImageWithAsset:page.fields[@"asset"]];
                                           
                                           tutorialView.body.text = page.fields[@"content"];
                                           tutorialView.headline.text = page.fields[@"headline"];
