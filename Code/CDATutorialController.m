@@ -39,8 +39,7 @@
 -(id)init {
     self = [super init];
     if (self) {
-        self.client = [[CDAClient alloc] initWithSpaceKey:@"tyqxsw7o3ipi"
-                                              accessToken:@"5ddd61286e007dd90a78549abd753c96ec7b6d8498e6217fb18328f3842b55b3"];
+        self.client = [[CDAClient alloc] initWithSpaceKey:@"tyqxsw7o3ipi" accessToken:@"5ddd61286e007dd90a78549abd753c96ec7b6d8498e6217fb18328f3842b55b3"];
     }
     return self;
 }
