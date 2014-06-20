@@ -96,7 +96,7 @@
     
     displayTypeSelection.frame = CGRectMake((headerView.width - 250.0) / 2, 10.0,
                                             250.0, displayTypeSelection.height);
-    displayTypeSelection.selectedSegmentIndex = tableView.numberOfSections == 1 ? 0 : 1;
+    displayTypeSelection.selectedSegmentIndex = self.tableView.dataSource != self.dataSource ? 0 : 1;
     
     [displayTypeSelection addTarget:self
                              action:@selector(displayTypeChanged:)
