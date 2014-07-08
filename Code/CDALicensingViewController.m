@@ -32,7 +32,6 @@
     NSAttributedString* attributedText = [converter convertDocument:document];
     
     self.textView.attributedText = attributedText;
-    self.textView.scrollEnabled = NO;
 }
 
 -(void)viewDidLoad {
