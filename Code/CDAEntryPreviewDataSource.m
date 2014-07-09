@@ -175,7 +175,10 @@ NSString* const kTextCell        = @"TextCell";
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC),
                            dispatch_get_main_queue(),
                            ^{
-                               CGFloat height = [(CDAMarkdownCell*)cell textView].contentSize.height;
+                               UITextView* textView = [(CDAMarkdownCell*)cell textView];
+                               CGSize size = [textView sizeThatFits:CGSizeMake(tableView.width,
+                                                                               INT_MAX)];
+                               CGFloat height = size.height;
                                self.customCellSizes[indexPath] = @(height);
                                
                                [tableView beginUpdates];
@@ -283,7 +286,7 @@ NSString* const kTextCell        = @"TextCell";
         return [(NSString*)value boundingRectWithSize:CGSizeMake(tableView.width, INT_MAX)
                                               options:NSStringDrawingUsesLineFragmentOrigin
                                            attributes:@{ NSFontAttributeName: [CDAMarkdownCell usedFont] }
-                                              context:nil].size.height + 40.0;
+                                              context:nil].size.height;
     }
     
     if (field.type == CDAFieldTypeLocation) {
