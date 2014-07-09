@@ -135,7 +135,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return self.emptySpaceHeight;
+    return MAX(self.emptySpaceHeight, 25.0);
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -145,9 +145,11 @@
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     UIView* footerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0,
                                                                   tableView.width, self.emptySpaceHeight)];
+    footerView.backgroundColor = [UIColor whiteColor];
     footerView.userInteractionEnabled = NO;
     
-    UILabel* versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.width, 50.0)];
+    UILabel* versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.width, 25.0)];
+    versionLabel.backgroundColor = [UIColor whiteColor];
     versionLabel.y = footerView.height - versionLabel.height;
     
     versionLabel.text = [NSString stringWithFormat:NSLocalizedString(@"App version %@", nil),
