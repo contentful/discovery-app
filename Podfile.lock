@@ -20,11 +20,11 @@ PODS:
   - AFNetworking/UIKit (2.3.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - AnimatedGIFImageSerialization (0.0.1)
+  - AnimatedGIFImageSerialization (0.2.0)
   - Aspects (1.4.1)
   - Bypass (1.0.1)
   - CGLMail (0.1.1)
-  - ContentfulDeliveryAPI (1.3.0):
+  - ContentfulDeliveryAPI (1.4.1):
     - AFNetworking
     - HRCoder
     - ISO8601DateFormatter
@@ -33,7 +33,7 @@ PODS:
   - DHCShakeNotifier (0.2.0)
   - HRCoder (1.3.1)
   - ISO8601DateFormatter (0.7)
-  - OpenSans (1.0.2)
+  - OpenSans (1.0.3)
   - TSMiniWebBrowser@dblock (1.1)
   - UITableView-NXEmptyView (0.1.6)
 
@@ -52,17 +52,17 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
-  AnimatedGIFImageSerialization: 59d27f2411f5669d35c8d99f32b1b7ff6bd892d0
+  AnimatedGIFImageSerialization: ee2b8f04ec1143dd196cac160a7b119753891825
   Aspects: a6368eba05295b24ffe0e9acfb9080cc3b0f4b5f
   Bypass: 225bc63ebb09e5674c1fc460b1708e775f68f52f
   CGLMail: ba03e1a69db3c27bad925fe1270cd99fada5ed69
-  ContentfulDeliveryAPI: f2013220876d6e401fefc904badf15745403bf1f
+  ContentfulDeliveryAPI: c75d05cb749483dfe07b686014fcc8d03ca6b2d7
   CSStickyHeaderFlowLayout: 50d1968dc88560419a96beab3de0fa47a4294eac
   DDPageControl: 86d07bda58e325a427fb0d7c8fb650add2ff35c2
   DHCShakeNotifier: d5e1130243096e9488e0ecce8e6e268647357b4b
   HRCoder: 0952826ddf4213a11be775d01446f61a5df987a4
   ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
-  OpenSans: 7920678ea50c3c2350b1f10ea5b8990524d239d8
+  OpenSans: fb4374107f269022e5067380e477ff9f1436ee53
   TSMiniWebBrowser@dblock: 4e73ee955fcf2e9f5d98f7a17460454ac059bc37
   UITableView-NXEmptyView: 4322b391d08f8272e4f1860e4a182eba300d05dd
 
