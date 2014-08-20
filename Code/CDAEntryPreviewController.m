@@ -33,6 +33,16 @@
 -(id)initWithEntry:(CDAEntry*)entry {
     self = [super initWithEntry:entry tableViewStyle:UITableViewStylePlain];
     if (self) {
+        switch ([entry.contentType fieldForIdentifier:entry.contentType.displayField].type) {
+            case CDAFieldTypeInteger:
+            case CDAFieldTypeBoolean:
+            case CDAFieldTypeNumber:
+                self.title = [entry.fields[entry.contentType.displayField] stringValue];
+
+            default:
+                break;
+        }
+
         self.dataSource = [[CDAEntryPreviewDataSource alloc] initWithEntry:entry];
         
         self.tableView.dataSource = self.dataSource;

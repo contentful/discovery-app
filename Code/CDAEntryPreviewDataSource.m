@@ -83,7 +83,24 @@ NSString* const kTextCell        = @"TextCell";
         CDAEntry* entry = (CDAEntry*)value;
         
         if (entry.contentType.displayField) {
-            cell.textLabel.text = entry.fields[entry.contentType.displayField];
+            id value = entry.fields[entry.contentType.displayField];
+
+            CDAField* field = [entry.contentType fieldForIdentifier:entry.contentType.displayField];
+            switch(field.type) {
+                case CDAFieldTypeSymbol:
+                case CDAFieldTypeText:
+                    cell.textLabel.text = value;
+                    break;
+
+                case CDAFieldTypeNumber:
+                case CDAFieldTypeBoolean:
+                case CDAFieldTypeInteger:
+                    cell.textLabel.text = [value stringValue];
+                    break;
+
+                default:
+                    break;
+            }
         }
         
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
