@@ -6,6 +6,8 @@
 //
 //
 
+#import <Crashlytics/Crashlytics.h>
+
 #import "BBUSplash.h"
 #import "CDAAppDelegate.h"
 #import "CDASpaceSelectionViewController.h"
@@ -16,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Crashlytics startWithAPIKey:@"CRASHLYTICS-KEY"];
+
     [UIButton appearance].tintColor = [UIColor contentfulBlueColor];
     [UINavigationBar appearance].tintColor = [UIColor contentfulBlackColor];
     [UISegmentedControl appearance].tintColor = [UIColor contentfulBlueColor];

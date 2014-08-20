@@ -66,6 +66,7 @@
 		A17D37D1194EE50600B39213 /* markup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A17D37CE194EE50600B39213 /* markup@2x.png */; };
 		A1977FC8195482CB003D6AD4 /* image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1977FC7195482CB003D6AD4 /* image@2x.png */; };
 		A19FEC3919A37CBF003BD014 /* CDAAttributedStringConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = A19FEC3819A37CBF003BD014 /* CDAAttributedStringConverter.m */; };
+		A19FEC3C19A4D779003BD014 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19FEC3B19A4D779003BD014 /* Crashlytics.framework */; };
 		A1D134E1194F19EA0060C842 /* fileGroups.json in Resources */ = {isa = PBXBuildFile; fileRef = A1D134E0194F19EA0060C842 /* fileGroups.json */; };
 		A1D134F7194F2D600060C842 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D134E2194F2D600060C842 /* about.png */; };
 		A1D134F8194F2D600060C842 /* assets.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D134E3194F2D600060C842 /* assets.png */; };
@@ -189,6 +190,7 @@
 		A1977FC7195482CB003D6AD4 /* image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image@2x.png"; sourceTree = "<group>"; };
 		A19FEC3719A37CBF003BD014 /* CDAAttributedStringConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAAttributedStringConverter.h; sourceTree = "<group>"; };
 		A19FEC3819A37CBF003BD014 /* CDAAttributedStringConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAAttributedStringConverter.m; sourceTree = "<group>"; };
+		A19FEC3B19A4D779003BD014 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		A1D134E0194F19EA0060C842 /* fileGroups.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fileGroups.json; path = "contrib/mimetype/contentful-mimetype/lib/fileGroups.json"; sourceTree = SOURCE_ROOT; };
 		A1D134E2194F2D600060C842 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		A1D134E3194F2D600060C842 /* assets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = assets.png; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1279CF11948555700EC6B05 /* CoreGraphics.framework in Frameworks */,
+				A19FEC3C19A4D779003BD014 /* Crashlytics.framework in Frameworks */,
 				A1279CF31948555700EC6B05 /* UIKit.framework in Frameworks */,
 				A1279CEF1948555700EC6B05 /* Foundation.framework in Frameworks */,
 				28643A89DDE546D5ABD1A0B1 /* libPods-Discovery.a in Frameworks */,
@@ -265,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				A1279CF01948555700EC6B05 /* CoreGraphics.framework */,
+				A19FEC3B19A4D779003BD014 /* Crashlytics.framework */,
 				A1279CEE1948555700EC6B05 /* Foundation.framework */,
 				A1279CF21948555700EC6B05 /* UIKit.framework */,
 				E187785852B64298B4B6751B /* libPods-Discovery.a */,
@@ -508,6 +512,7 @@
 				A1279CE91948555700EC6B05 /* Resources */,
 				E3AFA1B73EC64DACB0C5C91C /* Copy Pods Resources */,
 				A1D39569194A08D70083D8E2 /* Show TODOs and FIXMEs */,
+				A19FEC3A19A4D751003BD014 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -626,6 +631,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		A19FEC3A19A4D751003BD014 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run ***REMOVED***";
 		};
 		A1D39569194A08D70083D8E2 /* Show TODOs and FIXMEs */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -781,6 +800,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting_Files/Discovery-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -828,6 +851,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting_Files/Discovery-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
