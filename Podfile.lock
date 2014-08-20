@@ -24,7 +24,7 @@ PODS:
   - Aspects (1.4.1)
   - Bypass (1.0.1)
   - CGLMail (0.1.1)
-  - ContentfulDeliveryAPI (1.4.1):
+  - ContentfulDeliveryAPI (HEAD based on 1.4.1):
     - AFNetworking
     - HRCoder
     - ISO8601DateFormatter
@@ -42,7 +42,7 @@ DEPENDENCIES:
   - Aspects
   - Bypass
   - CGLMail
-  - ContentfulDeliveryAPI
+  - ContentfulDeliveryAPI (HEAD)
   - CSStickyHeaderFlowLayout
   - DDPageControl
   - DHCShakeNotifier
