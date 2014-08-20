@@ -44,6 +44,12 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    self.tableView.height = self.tableView.superview.height;
+}
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     
