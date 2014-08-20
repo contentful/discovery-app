@@ -65,6 +65,7 @@
 		A17D37D0194EE50600B39213 /* code@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A17D37CD194EE50600B39213 /* code@2x.png */; };
 		A17D37D1194EE50600B39213 /* markup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A17D37CE194EE50600B39213 /* markup@2x.png */; };
 		A1977FC8195482CB003D6AD4 /* image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1977FC7195482CB003D6AD4 /* image@2x.png */; };
+		A19FEC3919A37CBF003BD014 /* CDAAttributedStringConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = A19FEC3819A37CBF003BD014 /* CDAAttributedStringConverter.m */; };
 		A1D134E1194F19EA0060C842 /* fileGroups.json in Resources */ = {isa = PBXBuildFile; fileRef = A1D134E0194F19EA0060C842 /* fileGroups.json */; };
 		A1D134F7194F2D600060C842 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D134E2194F2D600060C842 /* about.png */; };
 		A1D134F8194F2D600060C842 /* assets.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D134E3194F2D600060C842 /* assets.png */; };
@@ -186,6 +187,8 @@
 		A17D37CD194EE50600B39213 /* code@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "code@2x.png"; sourceTree = "<group>"; };
 		A17D37CE194EE50600B39213 /* markup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "markup@2x.png"; sourceTree = "<group>"; };
 		A1977FC7195482CB003D6AD4 /* image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image@2x.png"; sourceTree = "<group>"; };
+		A19FEC3719A37CBF003BD014 /* CDAAttributedStringConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAAttributedStringConverter.h; sourceTree = "<group>"; };
+		A19FEC3819A37CBF003BD014 /* CDAAttributedStringConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAAttributedStringConverter.m; sourceTree = "<group>"; };
 		A1D134E0194F19EA0060C842 /* fileGroups.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fileGroups.json; path = "contrib/mimetype/contentful-mimetype/lib/fileGroups.json"; sourceTree = SOURCE_ROOT; };
 		A1D134E2194F2D600060C842 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		A1D134E3194F2D600060C842 /* assets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = assets.png; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 		A1279D8C194859B700EC6B05 /* Entries */ = {
 			isa = PBXGroup;
 			children = (
+				A19FEC3719A37CBF003BD014 /* CDAAttributedStringConverter.h */,
+				A19FEC3819A37CBF003BD014 /* CDAAttributedStringConverter.m */,
 				A1279D301948597C00EC6B05 /* CDAEntryPreviewController.h */,
 				A1279D311948597C00EC6B05 /* CDAEntryPreviewController.m */,
 				A1279D321948597C00EC6B05 /* CDAEntryPreviewDataSource.h */,
@@ -660,6 +665,7 @@
 			files = (
 				A1279D681948597C00EC6B05 /* UIView+Geometry.m in Sources */,
 				A1279CFB1948555700EC6B05 /* main.m in Sources */,
+				A19FEC3919A37CBF003BD014 /* CDAAttributedStringConverter.m in Sources */,
 				A1279D981948958C00EC6B05 /* BBUSplash.m in Sources */,
 				A1279D5A1948597C00EC6B05 /* CDAEntryPreviewDataSource.m in Sources */,
 				A1279D581948597C00EC6B05 /* CDAContentTypesViewController.m in Sources */,
