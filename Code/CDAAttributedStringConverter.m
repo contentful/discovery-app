@@ -47,6 +47,10 @@
 
         [self.inlineAssets enumerateObjectsUsingBlock:^(CDAInlineAsset* asset, NSUInteger idx, BOOL *s) {
             NSAttributedString* imageAttachment = [self fitImageIntoAttributedString:asset.image];
+            if (!imageAttachment) {
+                return;
+            }
+
             [mutableString replaceCharactersInRange:asset.range withAttributedString:imageAttachment];
 
             CGFloat offset = asset.range.length - imageAttachment.length;
@@ -137,6 +141,10 @@
 }
 
 -(NSAttributedString*)fitImageIntoAttributedString:(UIImage*)image {
+    if (!image) {
+        return nil;
+    }
+
     image = [[self class] imageWithImage:image fitToHeight:250.0];
 
     NSTextAttachment* attachment = [NSTextAttachment new];

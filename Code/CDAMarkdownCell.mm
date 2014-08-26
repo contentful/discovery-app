@@ -29,6 +29,10 @@
 
 - (void)applyBackgroundsToInlineAssets:(NSArray*)inlineAssets {
     for (CDAInlineAsset* asset in inlineAssets) {
+        if (!asset.image) {
+            continue;
+        }
+
         CGRect boundingRect = [self boundingRectForCharacterRange:asset.range];
 
         boundingRect.origin.x = 5.0;
