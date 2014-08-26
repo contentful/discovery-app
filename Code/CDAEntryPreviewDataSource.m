@@ -198,8 +198,7 @@ NSString* const kTextCell        = @"TextCell";
                                CGFloat height = size.height;
                                self.customCellSizes[indexPath] = @(height);
                                
-                               [tableView beginUpdates];
-                               [tableView endUpdates];
+                               [tableView reloadData];
                            });
             
             break;
