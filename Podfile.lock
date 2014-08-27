@@ -34,6 +34,7 @@ PODS:
   - HRCoder (1.3.1)
   - ISO8601DateFormatter (0.7)
   - OpenSans (1.0.3)
+  - Realm (0.83.0)
   - TSMiniWebBrowser@dblock (1.1)
   - UITableView-NXEmptyView (0.1.6)
 
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - DDPageControl
   - DHCShakeNotifier
   - OpenSans
+  - Realm
   - TSMiniWebBrowser@dblock
   - UITableView-NXEmptyView
 
@@ -63,6 +65,7 @@ SPEC CHECKSUMS:
   HRCoder: 0952826ddf4213a11be775d01446f61a5df987a4
   ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
   OpenSans: fb4374107f269022e5067380e477ff9f1436ee53
+  Realm: b37a36efdb3b592febd267e3ebab464c25b4a3bb
   TSMiniWebBrowser@dblock: 4e73ee955fcf2e9f5d98f7a17460454ac059bc37
   UITableView-NXEmptyView: 4322b391d08f8272e4f1860e4a182eba300d05dd
 

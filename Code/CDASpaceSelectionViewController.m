@@ -11,6 +11,8 @@
 
 #import "CDAAboutUsViewController.h"
 #import "CDAHelpViewController.h"
+#import "CDAPreviouslySelectedSpace.h"
+#import "CDAPreviousSpacesViewController.h"
 #import "CDASpaceViewController.h"
 #import "CDATextEntryCell.h"
 #import "CDASpaceSelectionViewController.h"
@@ -89,6 +91,11 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
     [self startSpinningLogo];
     
     [client fetchSpaceWithSuccess:^(CDAResponse *response, CDASpace *space) {
+        [CDAPreviouslySelectedSpace spaceWithAccessToken:accessToken
+                                                    name:space.name
+                                         numberOfEntries:0
+                                                spaceKey:spaceKey];
+
         [self stopSpinningLogo];
         
         CDASpaceViewController* spaceVC = [CDASpaceViewController new];
@@ -148,7 +155,10 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 
 - (void)loadDefaultSpaceTapped
 {
-    [self showSpaceWithKey:@"nvyqx9l6z9z9" accessToken:@"af972a4929249ff278fa09828a4f6d4580ff6cba1d0ca1ef12c0c9afda2fe57e"];
+    CDAPreviousSpacesViewController* spacesVC = [CDAPreviousSpacesViewController new];
+    UINavigationController* navController = [[UINavigationController alloc]
+                                             initWithRootViewController:spacesVC];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (void)loadSpaceTapped
@@ -350,7 +360,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
                action:@selector(loadDefaultSpaceTapped)
      forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btn_green"] forState:UIControlStateNormal];
-    [button setTitle:NSLocalizedString(@"Demo Space", nil) forState:UIControlStateNormal];
+    [button setTitle:NSLocalizedString(@"Demo Space / History", nil) forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setTitleEdgeInsets:self.loadButton.titleEdgeInsets];
     

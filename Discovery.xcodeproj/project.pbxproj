@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		28643A89DDE546D5ABD1A0B1 /* libPods-Discovery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E187785852B64298B4B6751B /* libPods-Discovery.a */; };
+		A107497319ACD5990039F82D /* CDAPreviouslySelectedSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = A107497219ACD5990039F82D /* CDAPreviouslySelectedSpace.m */; };
+		A107497A19ACDBD10039F82D /* CDAPreviousSpacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A107497919ACDBD10039F82D /* CDAPreviousSpacesViewController.m */; };
 		A1279CEF1948555700EC6B05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1279CEE1948555700EC6B05 /* Foundation.framework */; };
 		A1279CF11948555700EC6B05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1279CF01948555700EC6B05 /* CoreGraphics.framework */; };
 		A1279CF31948555700EC6B05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1279CF21948555700EC6B05 /* UIKit.framework */; };
@@ -59,6 +61,7 @@
 		A1279D951948863700EC6B05 /* contentful-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1279D921948863700EC6B05 /* contentful-video.mp4 */; };
 		A1279D981948958C00EC6B05 /* BBUSplash.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D971948958C00EC6B05 /* BBUSplash.m */; };
 		A1279D9B194895E000EC6B05 /* UIDevice+BBU.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */; };
+		A1457B2019ADD62D001E59C5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1457B1F19ADD62D001E59C5 /* Realm.framework */; };
 		A16742841954BC64007966EF /* Pods-Discovery-acknowledgements.markdown in Resources */ = {isa = PBXBuildFile; fileRef = A16742831954BC64007966EF /* Pods-Discovery-acknowledgements.markdown */; };
 		A16A2C0D1954B97300AB4783 /* CDALicensingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A16A2C0C1954B97300AB4783 /* CDALicensingViewController.m */; };
 		A17D37CF194EE50600B39213 /* attachment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A17D37CC194EE50600B39213 /* attachment@2x.png */; };
@@ -101,6 +104,10 @@
 
 /* Begin PBXFileReference section */
 		01EE5E5497134C419419C9FF /* Pods-Discovery.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Discovery.xcconfig"; path = "../Pods/Pods-Discovery.xcconfig"; sourceTree = "<group>"; };
+		A107497119ACD5990039F82D /* CDAPreviouslySelectedSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAPreviouslySelectedSpace.h; sourceTree = "<group>"; };
+		A107497219ACD5990039F82D /* CDAPreviouslySelectedSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAPreviouslySelectedSpace.m; sourceTree = "<group>"; };
+		A107497819ACDBD10039F82D /* CDAPreviousSpacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAPreviousSpacesViewController.h; sourceTree = "<group>"; };
+		A107497919ACDBD10039F82D /* CDAPreviousSpacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAPreviousSpacesViewController.m; sourceTree = "<group>"; };
 		A1279CEB1948555700EC6B05 /* Discovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Discovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1279CEE1948555700EC6B05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A1279CF01948555700EC6B05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -181,6 +188,7 @@
 		A1279D971948958C00EC6B05 /* BBUSplash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBUSplash.m; path = Code/BBUSplash.m; sourceTree = SOURCE_ROOT; };
 		A1279D99194895E000EC6B05 /* UIDevice+BBU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+BBU.h"; path = "Code/UIDevice+BBU.h"; sourceTree = SOURCE_ROOT; };
 		A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+BBU.m"; path = "Code/UIDevice+BBU.m"; sourceTree = SOURCE_ROOT; };
+		A1457B1F19ADD62D001E59C5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/Realm/realm-cocoapods-0.83.0/ios/Realm.framework"; sourceTree = "<group>"; };
 		A16742831954BC64007966EF /* Pods-Discovery-acknowledgements.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Pods-Discovery-acknowledgements.markdown"; path = "Pods/Pods-Discovery-acknowledgements.markdown"; sourceTree = SOURCE_ROOT; };
 		A16A2C0B1954B97300AB4783 /* CDALicensingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDALicensingViewController.h; sourceTree = "<group>"; };
 		A16A2C0C1954B97300AB4783 /* CDALicensingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDALicensingViewController.m; sourceTree = "<group>"; };
@@ -234,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1457B2019ADD62D001E59C5 /* Realm.framework in Frameworks */,
 				A1279CF11948555700EC6B05 /* CoreGraphics.framework in Frameworks */,
 				A19FEC3C19A4D779003BD014 /* Crashlytics.framework in Frameworks */,
 				A1279CF31948555700EC6B05 /* UIKit.framework in Frameworks */,
@@ -267,6 +276,7 @@
 		A1279CED1948555700EC6B05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1457B1F19ADD62D001E59C5 /* Realm.framework */,
 				A1279CF01948555700EC6B05 /* CoreGraphics.framework */,
 				A19FEC3B19A4D779003BD014 /* Crashlytics.framework */,
 				A1279CEE1948555700EC6B05 /* Foundation.framework */,
@@ -289,6 +299,8 @@
 				A1279D971948958C00EC6B05 /* BBUSplash.m */,
 				A1279D201948597C00EC6B05 /* CDAAppDelegate.h */,
 				A1279D211948597C00EC6B05 /* CDAAppDelegate.m */,
+				A1279D3C1948597C00EC6B05 /* CDAPrimitiveCell.h */,
+				A1279D3D1948597C00EC6B05 /* CDAPrimitiveCell.m */,
 				A1D6E7391949024000725E4F /* CDAWebController.h */,
 				A1D6E73A1949024000725E4F /* CDAWebController.m */,
 			);
@@ -359,8 +371,6 @@
 				A1279D391948597C00EC6B05 /* CDAInlineMapCell.m */,
 				A1279D3A1948597C00EC6B05 /* CDAMarkdownCell.h */,
 				A1279D3B1948597C00EC6B05 /* CDAMarkdownCell.mm */,
-				A1279D3C1948597C00EC6B05 /* CDAPrimitiveCell.h */,
-				A1279D3D1948597C00EC6B05 /* CDAPrimitiveCell.m */,
 			);
 			name = Entries;
 			sourceTree = "<group>";
@@ -368,6 +378,10 @@
 		A1279D8D194859CB00EC6B05 /* Spaces */ = {
 			isa = PBXGroup;
 			children = (
+				A107497119ACD5990039F82D /* CDAPreviouslySelectedSpace.h */,
+				A107497219ACD5990039F82D /* CDAPreviouslySelectedSpace.m */,
+				A107497819ACDBD10039F82D /* CDAPreviousSpacesViewController.h */,
+				A107497919ACDBD10039F82D /* CDAPreviousSpacesViewController.m */,
 				A1279D3E1948597C00EC6B05 /* CDASpaceSelectionViewController.h */,
 				A1279D3F1948597C00EC6B05 /* CDASpaceSelectionViewController.m */,
 				A1279D401948597C00EC6B05 /* CDASpaceViewController.h */,
@@ -688,12 +702,14 @@
 				A1279D981948958C00EC6B05 /* BBUSplash.m in Sources */,
 				A1279D5A1948597C00EC6B05 /* CDAEntryPreviewDataSource.m in Sources */,
 				A1279D581948597C00EC6B05 /* CDAContentTypesViewController.m in Sources */,
+				A107497319ACD5990039F82D /* CDAPreviouslySelectedSpace.m in Sources */,
 				A1279D601948597C00EC6B05 /* CDASpaceSelectionViewController.m in Sources */,
 				A1279D501948597C00EC6B05 /* CDAAboutUsViewController.m in Sources */,
 				A1279D5F1948597C00EC6B05 /* CDAPrimitiveCell.m in Sources */,
 				A1279D611948597C00EC6B05 /* CDASpaceViewController.m in Sources */,
 				A1DC5C7319532DA80017B6B1 /* UIColor+Contentful.m in Sources */,
 				A1279D571948597C00EC6B05 /* CDABasicCell.m in Sources */,
+				A107497A19ACDBD10039F82D /* CDAPreviousSpacesViewController.m in Sources */,
 				A1279D9B194895E000EC6B05 /* UIDevice+BBU.m in Sources */,
 				A1DC2DD2194FBC2B00CD0060 /* UIImage+Scaling.m in Sources */,
 				A1279D5E1948597C00EC6B05 /* CDAMarkdownCell.mm in Sources */,
@@ -803,6 +819,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/Realm/realm-cocoapods-0.83.0/ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting_Files/Discovery-Prefix.pch";
@@ -854,6 +871,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/Realm/realm-cocoapods-0.83.0/ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting_Files/Discovery-Prefix.pch";
