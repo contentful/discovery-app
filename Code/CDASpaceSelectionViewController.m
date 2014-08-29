@@ -56,6 +56,7 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
+        self.tableView.bounces = NO;
         self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
         self.title = NSLocalizedString(@"Space selection", nil);
         
