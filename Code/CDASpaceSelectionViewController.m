@@ -355,12 +355,19 @@ static NSString* const CDALogoAnimationKey  = @"SpinLogo";
     button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(self.loadButton.x, CGRectGetMaxY(self.loadButton.frame) + 10.0,
                               self.loadButton.width, self.loadButton.height);
+
+    NSString* buttonLabel = nil;
+    if ([CDAPreviouslySelectedSpace allObjects].count == 0) {
+        buttonLabel = NSLocalizedString(@"Demo Space", nil);
+    } else {
+        buttonLabel = NSLocalizedString(@"History of Spaces", nil);
+    }
     
     [button addTarget:self
                action:@selector(loadDefaultSpaceTapped)
      forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btn_green"] forState:UIControlStateNormal];
-    [button setTitle:NSLocalizedString(@"Demo Space / History", nil) forState:UIControlStateNormal];
+    [button setTitle:buttonLabel forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setTitleEdgeInsets:self.loadButton.titleEdgeInsets];
     
