@@ -25,7 +25,11 @@
     [super viewDidLoad];
 
     if ([CDAPreviouslySelectedSpace allObjects].count == 0) {
-        [CDAPreviouslySelectedSpace spaceWithAccessToken:@"af972a4929249ff278fa09828a4f6d4580ff6cba1d0ca1ef12c0c9afda2fe57e" name:@"Demo Space"numberOfEntries:17 spaceKey:@"nvyqx9l6z9z9"];
+        CDAPreviouslySelectedSpace* demoSpace = [CDAPreviouslySelectedSpace spaceWithAccessToken:@"af972a4929249ff278fa09828a4f6d4580ff6cba1d0ca1ef12c0c9afda2fe57e" name:@"Demo Space"numberOfEntries:17 spaceKey:@"nvyqx9l6z9z9"];
+
+        [[RLMRealm defaultRealm] beginWriteTransaction];
+        demoSpace.highlight = YES;
+        [[RLMRealm defaultRealm] commitWriteTransaction];
     }
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneTapped)];
@@ -60,6 +64,14 @@
     cell.detailTextLabel.text = [NSDateFormatter localizedStringFromDate:space.lastAccessTime
                                                                dateStyle:NSDateFormatterShortStyle
                                                                timeStyle:NSDateFormatterShortStyle];
+
+    if (space.highlight) {
+        cell.detailTextLabel.textColor = [UIColor blueColor];
+        cell.textLabel.textColor = [UIColor blueColor];
+    } else {
+        cell.detailTextLabel.textColor = [UIColor blackColor];
+        cell.textLabel.textColor = [UIColor blackColor];
+    }
 
     return cell;
 }

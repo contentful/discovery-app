@@ -11,6 +11,7 @@
 @interface CDAPreviouslySelectedSpace : RLMObject
 
 @property (nonatomic) NSString* accessToken;
+@property (nonatomic) BOOL highlight;
 @property (nonatomic) NSDate* lastAccessTime;
 @property (nonatomic) NSString* name;
 @property (nonatomic) int numberOfEntries;
