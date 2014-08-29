@@ -46,7 +46,9 @@ extern NSString* CDACacheFileNameForResource(CDAResource* resource);
 
 @interface CDAAssetPreviewController () <QLPreviewControllerDataSource>
 
+@property (nonatomic) UIActivityIndicatorView* activity;
 @property (nonatomic) CDAAsset* asset;
+@property (nonatomic) UIView* backgroundView;
 @property (nonatomic, readonly) NSURL* localURL;
 
 @end
@@ -63,6 +65,9 @@ extern NSString* CDACacheFileNameForResource(CDAResource* resource);
 #pragma mark -
 
 -(void)finishLoading {
+    [self.activity removeFromSuperview];
+    [self.backgroundView removeFromSuperview];
+
     [self reloadData];
     
     if (self.previewDelegate) {
@@ -83,8 +88,19 @@ extern NSString* CDACacheFileNameForResource(CDAResource* resource);
     return [NSURL fileURLWithPath:CDACacheFileNameForResource(self.asset)];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    [self.view bringSubviewToFront:self.activity];
+    [self.activity startAnimating];
+}
+
 -(void)viewDidLoad {
     [super viewDidLoad];
+
+    self.activity = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 44) / 2, (self.view.bounds.size.height - 44) / 2, 44.0, 44.0)];
+    self.activity.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    [self.view addSubview:self.activity];
     
     if ([self.localURL checkResourceIsReachableAndReturnError:nil]) {
         [self finishLoading];
@@ -96,12 +112,25 @@ extern NSString* CDACacheFileNameForResource(CDAResource* resource);
                            completionHandler:^(NSURLResponse *response,
                                                NSData *data,
                                                NSError *connectionError) {
+                               [self.activity stopAnimating];
+
                                if (data) {
                                    [data writeToURL:self.localURL atomically:YES];
                                    
                                    [self finishLoading];
+                               } else {
+                                   UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:connectionError.localizedDescription delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+                                   [alert show];
                                }
                            }];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    self.backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.backgroundView.backgroundColor = [UIColor whiteColor];
+    [self.view insertSubview:self.backgroundView atIndex:0];
 }
 
 #pragma mark - QLPreviewControllerDataSource
