@@ -109,7 +109,7 @@
         cell.detailTextLabel.width = cell.width - 120.0;
     } error:nil];
     
-    [self.client fetchEntriesMatching:@{ @"content_type": contentType.identifier, @"limit": @0 }
+    [self.client fetchEntriesMatching:@{ @"content_type": contentType.identifier, @"limit": @1 }
                               success:^(CDAResponse *response, CDAArray *array) {
                                   entryCountLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%d entries", nil), array.total];
                                   
