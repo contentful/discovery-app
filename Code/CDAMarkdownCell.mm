@@ -36,7 +36,7 @@
         CGRect boundingRect = [self boundingRectForCharacterRange:asset.range];
 
         boundingRect.origin.x = 5.0;
-        boundingRect.origin.y += 25.0;
+        boundingRect.origin.y += 25.0 + self.textView.frame.origin.y;
         boundingRect.size.width = self.textView.frame.size.width - 10.0;
         boundingRect.size.height += 20.0;
 
@@ -54,6 +54,10 @@
     [layoutManager characterRangeForGlyphRange:range actualGlyphRange:&glyphRange];
 
     return [layoutManager boundingRectForGlyphRange:glyphRange inTextContainer:textContainer];
+}
+
+- (void)dealloc {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -79,12 +83,20 @@
 }
 
 - (void)setMarkdownText:(NSString *)markdownText {
+    if ([_markdownText isEqualToString:markdownText]) {
+        return;
+    }
+
     _markdownText = markdownText;
     
     BPDocument* document = [[BPParser new] parse:markdownText];
     CDAAttributedStringConverter* converter = [CDAAttributedStringConverter new];
 
     [converter fetchInlineAssetsFromDocument:document withCompletionHandler:^(CDAAttributedStringConverter *converter, NSError *error) {
+        if (!converter) {
+            return;
+        }
+
         converter.displaySettings.quoteFont = [UIFont fontWithName:@"Marion-Italic"
                                                               size:[UIFont systemFontSize] + 1.0f];
         NSAttributedString* attributedText = [converter convertDocument:document];
@@ -92,6 +104,10 @@
         self.textView.attributedText = attributedText;
         self.textView.backgroundColor = [UIColor clearColor];
         self.textView.scrollEnabled = NO;
+
+        if (self.finishedLoadingHandler) {
+            self.finishedLoadingHandler();
+        }
 
         [self performSelector:@selector(applyBackgroundsToInlineAssets:)
                    withObject:converter.inlineAssets

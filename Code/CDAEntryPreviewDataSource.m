@@ -183,10 +183,18 @@ NSString* const kTextCell        = @"TextCell";
             cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, cell.bounds.size.width);
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
+            CDAMarkdownCell* markdownCell = (CDAMarkdownCell*)cell;
+
             if (field.type == CDAFieldTypeObject) {
-                [(CDAMarkdownCell*)cell textView].text = [value description];
+                markdownCell.textView.text = [value description];
+
+                markdownCell.finishedLoadingHandler = nil;
             } else {
-                [(CDAMarkdownCell*)cell setMarkdownText:value];
+                [markdownCell setMarkdownText:value];
+
+                markdownCell.finishedLoadingHandler = ^{
+                    [tableView reloadData];
+                };
             }
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC),
@@ -196,9 +204,12 @@ NSString* const kTextCell        = @"TextCell";
                                CGSize size = [textView sizeThatFits:CGSizeMake(tableView.width,
                                                                                INT_MAX)];
                                CGFloat height = size.height;
-                               self.customCellSizes[indexPath] = @(height);
                                
-                               [tableView reloadData];
+                               if (height != [self.customCellSizes[indexPath] floatValue]) {
+                                   self.customCellSizes[indexPath] = @(height);
+
+                                   [tableView reloadData];
+                               }
                            });
             
             break;
