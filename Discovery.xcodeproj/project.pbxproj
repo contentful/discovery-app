@@ -106,7 +106,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01EE5E5497134C419419C9FF /* Pods-Discovery.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Discovery.xcconfig"; path = "../Pods/Pods-Discovery.xcconfig"; sourceTree = "<group>"; };
+		23A70B378B89B7AEBAFEDC22 /* Pods-Discovery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Discovery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Discovery/Pods-Discovery.release.xcconfig"; sourceTree = "<group>"; };
 		A107497119ACD5990039F82D /* CDAPreviouslySelectedSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAPreviouslySelectedSpace.h; sourceTree = "<group>"; };
 		A107497219ACD5990039F82D /* CDAPreviouslySelectedSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAPreviouslySelectedSpace.m; sourceTree = "<group>"; };
 		A107497819ACDBD10039F82D /* CDAPreviousSpacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAPreviousSpacesViewController.h; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		A1279D99194895E000EC6B05 /* UIDevice+BBU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+BBU.h"; path = "Code/UIDevice+BBU.h"; sourceTree = SOURCE_ROOT; };
 		A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+BBU.m"; path = "Code/UIDevice+BBU.m"; sourceTree = SOURCE_ROOT; };
 		A1457B1F19ADD62D001E59C5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/Realm/realm-cocoapods-0.83.0/ios/Realm.framework"; sourceTree = "<group>"; };
-		A16742831954BC64007966EF /* Pods-Discovery-acknowledgements.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Pods-Discovery-acknowledgements.markdown"; path = "Pods/Pods-Discovery-acknowledgements.markdown"; sourceTree = SOURCE_ROOT; };
+		A16742831954BC64007966EF /* Pods-Discovery-acknowledgements.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "Pods-Discovery-acknowledgements.markdown"; path = "Pods/Target Support Files/Pods-Discovery/Pods-Discovery-acknowledgements.markdown"; sourceTree = SOURCE_ROOT; };
 		A16A2C0B1954B97300AB4783 /* CDALicensingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDALicensingViewController.h; sourceTree = "<group>"; };
 		A16A2C0C1954B97300AB4783 /* CDALicensingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDALicensingViewController.m; sourceTree = "<group>"; };
 		A17D37CC194EE50600B39213 /* attachment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "attachment@2x.png"; sourceTree = "<group>"; };
@@ -240,6 +240,7 @@
 		A1DC5C76195332900017B6B1 /* UIFont+Contentful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Contentful.m"; sourceTree = "<group>"; };
 		A1DC5C7D195338AB0017B6B1 /* logo~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo~ipad.png"; sourceTree = "<group>"; };
 		A1DC5C7E195338AB0017B6B1 /* logo@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x~ipad.png"; sourceTree = "<group>"; };
+		BBBE3F40E3F468BEB0398A5B /* Pods-Discovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Discovery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Discovery/Pods-Discovery.debug.xcconfig"; sourceTree = "<group>"; };
 		E187785852B64298B4B6751B /* libPods-Discovery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Discovery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -271,6 +272,7 @@
 				A1279CEC1948555700EC6B05 /* Products */,
 				A1279D1D1948559F00EC6B05 /* Resources */,
 				A1279CF51948555700EC6B05 /* Supporting Files */,
+				CC8CD1E37F7DAADD1EA04DDA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -325,7 +327,6 @@
 				A1279CF61948555700EC6B05 /* Discovery-Info.plist */,
 				A1279CFC1948555700EC6B05 /* Discovery-Prefix.pch */,
 				A1279CFA1948555700EC6B05 /* main.m */,
-				01EE5E5497134C419419C9FF /* Pods-Discovery.xcconfig */,
 			);
 			name = "Supporting Files";
 			path = Supporting_Files;
@@ -525,6 +526,15 @@
 			name = Information;
 			sourceTree = "<group>";
 		};
+		CC8CD1E37F7DAADD1EA04DDA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBBE3F40E3F468BEB0398A5B /* Pods-Discovery.debug.xcconfig */,
+				23A70B378B89B7AEBAFEDC22 /* Pods-Discovery.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -698,7 +708,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Discovery-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Discovery/Pods-Discovery-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -822,7 +832,7 @@
 		};
 		A1279D181948555700EC6B05 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01EE5E5497134C419419C9FF /* Pods-Discovery.xcconfig */;
+			baseConfigurationReference = BBBE3F40E3F468BEB0398A5B /* Pods-Discovery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -838,7 +848,10 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting_Files/Discovery-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -848,7 +861,7 @@
 		};
 		A1279D191948555700EC6B05 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01EE5E5497134C419419C9FF /* Pods-Discovery.xcconfig */;
+			baseConfigurationReference = 23A70B378B89B7AEBAFEDC22 /* Pods-Discovery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -864,7 +877,10 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting_Files/Discovery-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
