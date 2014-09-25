@@ -6,6 +6,7 @@
 //
 //
 
+#import <CocoaPods-Keys/DiscoveryKeys.h>
 #import <Crashlytics/Crashlytics.h>
 
 #import "BBUSplash.h"
@@ -18,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Crashlytics startWithAPIKey:@"CRASHLYTICS-KEY"];
+    [Crashlytics startWithAPIKey:[DiscoveryKeys new].crashlytics];
 
     [UIButton appearance].tintColor = [UIColor contentfulBlueColor];
     [UINavigationBar appearance].tintColor = [UIColor contentfulBlackColor];
