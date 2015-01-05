@@ -12,7 +12,7 @@
 
 +(instancetype)spaceForKey:(NSString*)spaceKey {
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"spaceKey = %@", spaceKey];
-    RLMArray *spaces = [CDAPreviouslySelectedSpace objectsWithPredicate:pred];
+    RLMResults *spaces = [CDAPreviouslySelectedSpace objectsWithPredicate:pred];
     return spaces.count > 0 ? spaces[0] : nil;
 }
 

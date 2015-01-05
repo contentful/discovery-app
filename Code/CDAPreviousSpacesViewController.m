@@ -13,7 +13,7 @@
 
 @interface CDAPreviousSpacesViewController ()
 
-@property (nonatomic) RLMArray* spaces;
+@property (nonatomic) RLMResults* spaces;
 
 @end
 
@@ -38,8 +38,7 @@
     [self.tableView registerClass:[CDAPrimitiveCell class]
            forCellReuseIdentifier:NSStringFromClass(self.class)];
 
-    self.spaces = [[CDAPreviouslySelectedSpace allObjects] arraySortedByProperty:@"lastAccessTime"
-                                                                       ascending:NO];
+    self.spaces = [[CDAPreviouslySelectedSpace allObjects] sortedResultsUsingProperty:@"lastAccessTime" ascending:NO];
 }
 
 #pragma mark - Actions

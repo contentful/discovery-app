@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28643A89DDE546D5ABD1A0B1 /* libPods-Discovery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E187785852B64298B4B6751B /* libPods-Discovery.a */; };
 		A107497319ACD5990039F82D /* CDAPreviouslySelectedSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = A107497219ACD5990039F82D /* CDAPreviouslySelectedSpace.m */; };
 		A107497A19ACDBD10039F82D /* CDAPreviousSpacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A107497919ACDBD10039F82D /* CDAPreviousSpacesViewController.m */; };
 		A1279CEF1948555700EC6B05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1279CEE1948555700EC6B05 /* Foundation.framework */; };
@@ -61,7 +60,6 @@
 		A1279D951948863700EC6B05 /* contentful-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A1279D921948863700EC6B05 /* contentful-video.mp4 */; };
 		A1279D981948958C00EC6B05 /* BBUSplash.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D971948958C00EC6B05 /* BBUSplash.m */; };
 		A1279D9B194895E000EC6B05 /* UIDevice+BBU.m in Sources */ = {isa = PBXBuildFile; fileRef = A1279D9A194895E000EC6B05 /* UIDevice+BBU.m */; };
-		A1457B2019ADD62D001E59C5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1457B1F19ADD62D001E59C5 /* Realm.framework */; };
 		A16742841954BC64007966EF /* Pods-Discovery-acknowledgements.markdown in Resources */ = {isa = PBXBuildFile; fileRef = A16742831954BC64007966EF /* Pods-Discovery-acknowledgements.markdown */; };
 		A16A2C0D1954B97300AB4783 /* CDALicensingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A16A2C0C1954B97300AB4783 /* CDALicensingViewController.m */; };
 		A17D37CF194EE50600B39213 /* attachment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A17D37CC194EE50600B39213 /* attachment@2x.png */; };
@@ -103,6 +101,7 @@
 		A1DC5C77195332900017B6B1 /* UIFont+Contentful.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC5C76195332900017B6B1 /* UIFont+Contentful.m */; };
 		A1DC5C7F195338AB0017B6B1 /* logo~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A1DC5C7D195338AB0017B6B1 /* logo~ipad.png */; };
 		A1DC5C80195338AB0017B6B1 /* logo@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A1DC5C7E195338AB0017B6B1 /* logo@2x~ipad.png */; };
+		DCC5A2195531737478ECB0B7 /* libPods-Discovery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C14A73E92686A2BADFC19C64 /* libPods-Discovery.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -241,7 +240,8 @@
 		A1DC5C7D195338AB0017B6B1 /* logo~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo~ipad.png"; sourceTree = "<group>"; };
 		A1DC5C7E195338AB0017B6B1 /* logo@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x~ipad.png"; sourceTree = "<group>"; };
 		BBBE3F40E3F468BEB0398A5B /* Pods-Discovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Discovery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Discovery/Pods-Discovery.debug.xcconfig"; sourceTree = "<group>"; };
-		E187785852B64298B4B6751B /* libPods-Discovery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Discovery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14A73E92686A2BADFC19C64 /* libPods-Discovery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Discovery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF9F4EA1AFD12F5CF46A1123 /* Pods_Discovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Discovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,12 +252,11 @@
 				A1B91A2819B08E95005F99F3 /* MobileCoreServices.framework in Frameworks */,
 				A1B91A2619B08E8B005F99F3 /* SystemConfiguration.framework in Frameworks */,
 				A1B91A2419B08E7F005F99F3 /* MessageUI.framework in Frameworks */,
-				A1457B2019ADD62D001E59C5 /* Realm.framework in Frameworks */,
 				A1279CF11948555700EC6B05 /* CoreGraphics.framework in Frameworks */,
 				A19FEC3C19A4D779003BD014 /* Crashlytics.framework in Frameworks */,
 				A1279CF31948555700EC6B05 /* UIKit.framework in Frameworks */,
 				A1279CEF1948555700EC6B05 /* Foundation.framework in Frameworks */,
-				28643A89DDE546D5ABD1A0B1 /* libPods-Discovery.a in Frameworks */,
+				DCC5A2195531737478ECB0B7 /* libPods-Discovery.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +294,8 @@
 				A1457B1F19ADD62D001E59C5 /* Realm.framework */,
 				A1B91A2519B08E8B005F99F3 /* SystemConfiguration.framework */,
 				A1279CF21948555700EC6B05 /* UIKit.framework */,
-				E187785852B64298B4B6751B /* libPods-Discovery.a */,
+				FF9F4EA1AFD12F5CF46A1123 /* Pods_Discovery.framework */,
+				C14A73E92686A2BADFC19C64 /* libPods-Discovery.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -841,7 +841,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Pods/Realm/realm-cocoapods-0.83.0/ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting_Files/Discovery-Prefix.pch";
@@ -870,7 +869,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Pods/Realm/realm-cocoapods-0.83.0/ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting_Files/Discovery-Prefix.pch";
