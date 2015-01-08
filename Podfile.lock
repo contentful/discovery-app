@@ -28,6 +28,12 @@ PODS:
     - AFNetworking
     - HRCoder
     - ISO8601DateFormatter
+  - ContentfulDialogs (0.1.0):
+    - Bypass
+    - CGLMail
+    - ContentfulDeliveryAPI (~> 1.4.7)
+    - DDPageControl
+    - TSMiniWebBrowser@dblock
   - CSStickyHeaderFlowLayout (0.2.3)
   - DDPageControl (0.1)
   - DHCShakeNotifier (0.2.0)
@@ -44,15 +50,22 @@ DEPENDENCIES:
   - AnimatedGIFImageSerialization
   - Aspects
   - Bypass
-  - CGLMail
   - ContentfulDeliveryAPI
+  - ContentfulDialogs (from `git@github.com:contentful/contentful-ios-dialogs.git`)
   - CSStickyHeaderFlowLayout
-  - DDPageControl
   - DHCShakeNotifier
   - OpenSans
   - Realm
-  - TSMiniWebBrowser@dblock
   - UITableView-NXEmptyView
+
+EXTERNAL SOURCES:
+  ContentfulDialogs:
+    :git: git@github.com:contentful/contentful-ios-dialogs.git
+
+CHECKOUT OPTIONS:
+  ContentfulDialogs:
+    :commit: 5483d344b7c1757616f2442886a4030d72375bd9
+    :git: git@github.com:contentful/contentful-ios-dialogs.git
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
@@ -61,6 +74,7 @@ SPEC CHECKSUMS:
   Bypass: 225bc63ebb09e5674c1fc460b1708e775f68f52f
   CGLMail: ba03e1a69db3c27bad925fe1270cd99fada5ed69
   ContentfulDeliveryAPI: c3815bd863ddc5ae8a9039051bc7ab6962bfc031
+  ContentfulDialogs: ce515410dba561c8d815a5ef0470ed930d48ee4b
   CSStickyHeaderFlowLayout: c5595da1cf91cce22aca70c44ab80b59247c723c
   DDPageControl: 86d07bda58e325a427fb0d7c8fb650add2ff35c2
   DHCShakeNotifier: d5e1130243096e9488e0ecce8e6e268647357b4b
@@ -71,4 +85,4 @@ SPEC CHECKSUMS:
   TSMiniWebBrowser@dblock: 4e73ee955fcf2e9f5d98f7a17460454ac059bc37
   UITableView-NXEmptyView: e54d8033730946bf0df6b29d72343987019da095
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.0.beta.1
