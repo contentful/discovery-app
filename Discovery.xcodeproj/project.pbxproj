@@ -642,7 +642,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run ***REMOVED***";
+			shellScript = "#./Crashlytics.framework/run $CRASHLYTICS_KEY";
 		};
 		A1D39569194A08D70083D8E2 /* Show TODOs and FIXMEs */ = {
 			isa = PBXShellScriptBuildPhase;
