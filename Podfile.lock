@@ -1,23 +1,23 @@
 PODS:
-  - AFNetworking (2.5.0):
-    - AFNetworking/NSURLConnection (= 2.5.0)
-    - AFNetworking/NSURLSession (= 2.5.0)
-    - AFNetworking/Reachability (= 2.5.0)
-    - AFNetworking/Security (= 2.5.0)
-    - AFNetworking/Serialization (= 2.5.0)
-    - AFNetworking/UIKit (= 2.5.0)
-  - AFNetworking/NSURLConnection (2.5.0):
+  - AFNetworking (2.5.3):
+    - AFNetworking/NSURLConnection (= 2.5.3)
+    - AFNetworking/NSURLSession (= 2.5.3)
+    - AFNetworking/Reachability (= 2.5.3)
+    - AFNetworking/Security (= 2.5.3)
+    - AFNetworking/Serialization (= 2.5.3)
+    - AFNetworking/UIKit (= 2.5.3)
+  - AFNetworking/NSURLConnection (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.0):
+  - AFNetworking/NSURLSession (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.0)
-  - AFNetworking/Security (2.5.0)
-  - AFNetworking/Serialization (2.5.0)
-  - AFNetworking/UIKit (2.5.0):
+  - AFNetworking/Reachability (2.5.3)
+  - AFNetworking/Security (2.5.3)
+  - AFNetworking/Serialization (2.5.3)
+  - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AnimatedGIFImageSerialization (0.2.0)
@@ -68,21 +68,21 @@ CHECKOUT OPTIONS:
     :git: git@github.com:contentful/contentful-ios-dialogs.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
-  AnimatedGIFImageSerialization: ee2b8f04ec1143dd196cac160a7b119753891825
-  Aspects: a6368eba05295b24ffe0e9acfb9080cc3b0f4b5f
-  Bypass: 225bc63ebb09e5674c1fc460b1708e775f68f52f
-  CGLMail: ba03e1a69db3c27bad925fe1270cd99fada5ed69
-  ContentfulDeliveryAPI: c3815bd863ddc5ae8a9039051bc7ab6962bfc031
+  AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  AnimatedGIFImageSerialization: b0f0cfe71eac1ee45a3d57ae533c23b8e6f29501
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  Bypass: 72a80e30ea645fb190eaecdc7d67a1904b76b7dc
+  CGLMail: 91fbbf8a1c0283bb804798dce471f840b0f58488
+  ContentfulDeliveryAPI: c2ab45bd3363bede7df91d5fed702af2f4c35ef3
   ContentfulDialogs: ce515410dba561c8d815a5ef0470ed930d48ee4b
-  CSStickyHeaderFlowLayout: c5595da1cf91cce22aca70c44ab80b59247c723c
-  DDPageControl: 86d07bda58e325a427fb0d7c8fb650add2ff35c2
-  DHCShakeNotifier: d5e1130243096e9488e0ecce8e6e268647357b4b
-  HRCoder: 492f8e2e0b69b54842564d4bbeb1c0e151d4f95f
-  ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
-  OpenSans: fb4374107f269022e5067380e477ff9f1436ee53
-  Realm: 4ba08033bea6a32e49eebcfd41e5fd651168135b
-  TSMiniWebBrowser@dblock: 4e73ee955fcf2e9f5d98f7a17460454ac059bc37
-  UITableView-NXEmptyView: e54d8033730946bf0df6b29d72343987019da095
+  CSStickyHeaderFlowLayout: 42633a45d33abd6dd6937b81b6d2381e01c86835
+  DDPageControl: 60c7d350477922b1e67fcf927f7e50eddc7dd207
+  DHCShakeNotifier: 64048427ecaa763f2472d0032f58bf7a10074eee
+  HRCoder: 500ccf7f41e14a12fb9a8aca37793f0ace4c4e88
+  ISO8601DateFormatter: ab926648eebe497f4d167c0fd083992f959f1274
+  OpenSans: 33078846463eae780aa5f82986b51cce085f970d
+  Realm: 66d433a705f1d1ff0d574d5d646986514448dacc
+  TSMiniWebBrowser@dblock: 6eb565b44cc2e5cd5eee7660ee5c21f8afae415c
+  UITableView-NXEmptyView: 0bc404cfd9c201af518a63240ac4ac4dad2c69c2
 
-COCOAPODS: 0.36.0.beta.1
+COCOAPODS: 0.36.4
