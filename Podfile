@@ -8,8 +8,6 @@ platform :ios, '7.0'
 
 inhibit_all_warnings!
 
-target "Discovery" do
-
 pod 'AnimatedGIFImageSerialization'
 pod 'Aspects'
 pod 'Bypass'
@@ -23,6 +21,4 @@ pod 'UITableView-NXEmptyView'
 
 ## For testing only
 #pod 'Reveal-iOS-SDK'
-
-end
 

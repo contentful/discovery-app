@@ -39,10 +39,11 @@ PODS:
   - DHCShakeNotifier (0.2.0)
   - HRCoder (1.3.2)
   - ISO8601DateFormatter (0.7)
+  - Keys (1.0.0)
   - OpenSans (1.0.3)
-  - Realm (0.89.2):
-    - Realm/Headers (= 0.89.2)
-  - Realm/Headers (0.89.2)
+  - Realm (0.96.2):
+    - Realm/Headers (= 0.96.2)
+  - Realm/Headers (0.96.2)
   - TSMiniWebBrowser@dblock (1.1)
   - UITableView-NXEmptyView (0.1.7)
 
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - ContentfulDialogs (from `git@github.com:contentful/contentful-ios-dialogs.git`)
   - CSStickyHeaderFlowLayout
   - DHCShakeNotifier
+  - Keys (from `Pods/CocoaPodsKeys`)
   - OpenSans
   - Realm
   - UITableView-NXEmptyView
@@ -61,6 +63,8 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   ContentfulDialogs:
     :git: git@github.com:contentful/contentful-ios-dialogs.git
+  Keys:
+    :path: Pods/CocoaPodsKeys
 
 CHECKOUT OPTIONS:
   ContentfulDialogs:
@@ -80,9 +84,10 @@ SPEC CHECKSUMS:
   DHCShakeNotifier: 64048427ecaa763f2472d0032f58bf7a10074eee
   HRCoder: 500ccf7f41e14a12fb9a8aca37793f0ace4c4e88
   ISO8601DateFormatter: ab926648eebe497f4d167c0fd083992f959f1274
+  Keys: 7d2ff6ff42f6903358267ce56e9392f83c31acfe
   OpenSans: 33078846463eae780aa5f82986b51cce085f970d
-  Realm: 66d433a705f1d1ff0d574d5d646986514448dacc
+  Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
   TSMiniWebBrowser@dblock: 6eb565b44cc2e5cd5eee7660ee5c21f8afae415c
   UITableView-NXEmptyView: 0bc404cfd9c201af518a63240ac4ac4dad2c69c2
 
-COCOAPODS: 0.36.4
+COCOAPODS: 0.39.0

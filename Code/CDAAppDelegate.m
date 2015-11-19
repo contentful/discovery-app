@@ -6,7 +6,7 @@
 //
 //
 
-#import <CocoaPods-Keys/DiscoveryKeys.h>
+#import <Keys/DiscoveryKeys.h>
 #import <Crashlytics/Crashlytics.h>
 
 #import "BBUSplash.h"
