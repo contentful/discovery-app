@@ -1,3 +1,0 @@
-[submodule "contrib/mimetype/contentful-mimetype"]
-	path = contrib/mimetype/contentful-mimetype
-	url = git@github.com:contentful/mimetype.git
