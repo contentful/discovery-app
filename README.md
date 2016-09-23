@@ -2,9 +2,10 @@
 
 This app enables you to browse and preview your [Contentful][1] Spaces on iOS. It is compatible with iOS 7, or later, and released as open source under the [MIT license][2].
 
-Before compiling, make sure you install the dependencies via [CocoaPods][3]:
-
-    $ pod install
+Before compiling, make sure you install the dependencies via [CocoaPods][3] and RubyGems:
+   
+    $ bundle install
+    $ bundle exec pod install
 
 and update the git-submodules:
 
