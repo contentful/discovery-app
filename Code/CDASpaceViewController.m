@@ -79,14 +79,14 @@
 
 -(UIBarButtonItem*)localeButton {
     return [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"flag"]
-                                            style:UIBarButtonItemStyleBordered
+                                            style:UIBarButtonItemStylePlain
                                            target:self
                                            action:@selector(changeLocale)];
 }
 
 -(UIBarButtonItem *)logoutButton {
     return [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"logout"]
-                                            style:UIBarButtonItemStyleBordered
+                                            style:UIBarButtonItemStylePlain
                                            target:self
                                            action:@selector(logout)];
 }

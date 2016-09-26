@@ -20,12 +20,12 @@
 }
 
 -(void)setClient:(CDAClient *)client {
-    CDAAppDelegate* delegate = self.delegate;
+    CDAAppDelegate* delegate = (CDAAppDelegate*)self.delegate;
     delegate.client = client;
 }
 
 -(void)setCurrentLocale:(NSString *)currentLocale {
-    CDAAppDelegate* delegate = self.delegate;
+    CDAAppDelegate* delegate = (CDAAppDelegate*)self.delegate;
     delegate.currentLocale = currentLocale;
 }
 

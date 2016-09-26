@@ -65,7 +65,7 @@
 
 -(UIBarButtonItem *)logoutButton {
     return [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"logout"]
-                                            style:UIBarButtonItemStyleBordered
+                                            style:UIBarButtonItemStylePlain
                                            target:self
                                            action:@selector(logout)];
 }
